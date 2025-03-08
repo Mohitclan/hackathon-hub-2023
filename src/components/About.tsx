@@ -8,22 +8,22 @@ const About = () => {
     {
       icon: <Code className="w-6 h-6 text-primary" />,
       title: 'Innovative Coding',
-      description: 'Push the boundaries of what's possible with code. Develop cutting-edge solutions to real-world problems.'
+      description: "Push the boundaries of what's possible with code. Develop cutting-edge solutions to real-world problems."
     },
     {
       icon: <Users className="w-6 h-6 text-primary" />,
       title: 'Team Collaboration',
-      description: 'Form teams of up to 4 people and combine your unique skills to create something amazing together.'
+      description: "Form teams of up to 4 people and combine your unique skills to create something amazing together."
     },
     {
       icon: <Trophy className="w-6 h-6 text-primary" />,
       title: 'Amazing Prizes',
-      description: 'Win incredible rewards including cash prizes, the latest tech gadgets, and exclusive career opportunities.'
+      description: "Win incredible rewards including cash prizes, the latest tech gadgets, and exclusive career opportunities."
     },
     {
       icon: <Lightbulb className="w-6 h-6 text-primary" />,
       title: 'Learning Opportunities',
-      description: 'Gain invaluable experience, learn from industry experts, and enhance your technical and soft skills.'
+      description: "Gain invaluable experience, learn from industry experts, and enhance your technical and soft skills."
     }
   ];
 
