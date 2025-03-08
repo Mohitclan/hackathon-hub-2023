@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
 import Transition from './Transition';
@@ -12,7 +11,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           <Transition animation="fade-in-up" delay={100} className="md:col-span-2">
             <div>
-              <h2 className="text-2xl font-bold mb-6 gradient-text">HackathonHub</h2>
+              <h2 className="text-2xl font-bold mb-6 gradient-text">HACKरण</h2>
               <p className="text-gray-400 mb-8 max-w-md">
                 Join us for an unforgettable 48-hour coding experience where innovation meets collaboration. 
                 Build, learn, and compete for amazing prizes.
@@ -96,7 +95,7 @@ const Footer = () => {
         <Transition animation="fade-in-up" delay={400}>
           <div className="border-t border-gray-800 mt-16 pt-8 flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-500 text-sm mb-4 md:mb-0">
-              &copy; {currentYear} HackathonHub. All rights reserved.
+              &copy; {currentYear} HACKरण. All rights reserved.
             </p>
             <div className="flex space-x-6">
               <a href="#" className="text-gray-500 hover:text-white text-sm">Privacy Policy</a>

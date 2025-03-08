@@ -31,12 +31,12 @@ const About = () => {
     <section id="about" className="section-padding bg-charcoal-dark">
       <div className="container mx-auto px-6">
         <Transition animation="fade-in-up">
-          <h2 className="section-heading text-white">What is HackathonHub?</h2>
+          <h2 className="section-heading text-white">What is HACKरण?</h2>
         </Transition>
         
         <Transition animation="fade-in-up" delay={200}>
           <p className="section-subheading text-gray-300">
-            HackathonHub is a 48-hour coding marathon where creativity meets technology. 
+            HACKरण is a 48-hour coding marathon where creativity meets technology. 
             Participants form teams to solve challenges and develop innovative solutions, 
             with mentorship from industry experts and exciting prizes for the winners.
           </p>

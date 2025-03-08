@@ -39,7 +39,7 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
         <a href="#" className="text-2xl font-bold gradient-text">
-          HackathonHub
+          HACKरण
         </a>
 
         {/* Desktop Navigation */}

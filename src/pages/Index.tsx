@@ -14,7 +14,7 @@ import Footer from '../components/Footer';
 const Index = () => {
   useEffect(() => {
     // Update page title
-    document.title = 'HackathonHub - Join the Ultimate Hackathon Challenge';
+    document.title = 'HACKरण - Join the Ultimate Hackathon Challenge';
   }, []);
 
   return (

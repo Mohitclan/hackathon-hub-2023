@@ -34,7 +34,7 @@ const Hero = () => {
             
             <Transition animation="fade-in-up" delay={300}>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-white">
-                Join the Ultimate <span className="text-orange">Hackathon</span> Challenge!
+                Join the Ultimate <span className="text-orange">HACKरण</span> Challenge!
               </h1>
             </Transition>
             
