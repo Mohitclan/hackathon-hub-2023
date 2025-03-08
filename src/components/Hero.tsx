@@ -27,19 +27,19 @@ const Hero = () => {
       <div className="container mx-auto px-6 relative z-10 py-12 md:py-20">
         <div className="flex flex-col md:flex-row items-center">
           <div className="w-full md:w-1/2 md:pr-8">
-            <Transition animation="fade-in-up" delay={100} className="mb-6">
+            <Transition animation="fade-in-up" delay={100}>
               <span className="px-3 py-1 rounded-full text-sm font-medium bg-primary/10 text-primary inline-block mb-6">
                 October 15-17, 2023
               </span>
             </Transition>
             
-            <Transition animation="fade-in-up" delay={300} className="mb-6">
+            <Transition animation="fade-in-up" delay={300}>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
                 Join the Ultimate <span className="gradient-text">Hackathon</span> Challenge!
               </h1>
             </Transition>
             
-            <Transition animation="fade-in-up" delay={500} className="mb-8">
+            <Transition animation="fade-in-up" delay={500}>
               <p className="text-lg text-gray-600 mb-8 max-w-lg">
                 Collaborate with innovators, build game-changing solutions, and win exciting prizes in this premier coding event of the year.
               </p>

@@ -91,6 +91,10 @@
   .section-padding {
     @apply py-20 md:py-28;
   }
+  
+  .animate-bounce-slow {
+    animation: bounce 2s infinite;
+  }
 }
 
 @layer components {
@@ -116,6 +120,15 @@
 
   .section-subheading {
     @apply text-lg text-muted-foreground max-w-2xl mx-auto text-center mb-16;
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
   }
 }
 

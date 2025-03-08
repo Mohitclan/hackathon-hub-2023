@@ -48,7 +48,6 @@ const About = () => {
               key={index} 
               animation="fade-in-up" 
               delay={300 + index * 100}
-              className="feature-card"
             >
               <div className="bg-white p-8 rounded-xl border border-gray-100 smooth-shadow hover-scale h-full">
                 <div className="w-12 h-12 flex items-center justify-center rounded-lg bg-primary/10 mb-6">
@@ -61,7 +60,7 @@ const About = () => {
           ))}
         </div>
         
-        <Transition animation="fade-in-up" delay={700} className="mt-16">
+        <Transition animation="fade-in-up" delay={700}>
           <div className="bg-gradient-to-r from-primary/5 to-blue-400/5 p-8 md:p-12 rounded-2xl smooth-shadow">
             <blockquote className="text-lg md:text-xl text-gray-700 italic text-center">
               "Participating in last year's hackathon was a game-changer for me. 

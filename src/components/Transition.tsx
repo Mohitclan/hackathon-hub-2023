@@ -20,7 +20,7 @@ interface TransitionProps {
 
 const Transition: React.FC<TransitionProps> = ({
   children,
-  className,
+  className = '',
   delay = 0,
   duration = 500,
   once = true,
