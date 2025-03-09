@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { CalendarDays, Clock, MapPin } from 'lucide-react';
 import Transition from './Transition';
@@ -145,7 +146,7 @@ const Schedule = () => {
   ];
 
   return (
-    <section id="schedule" className="section-padding bg-white">
+    <section id="schedule" className="section-padding bg-charcoal-dark">
       <div className="container mx-auto px-6">
         <Transition animation="fade-in-up">
           <h2 className="section-heading">Event Schedule</h2>
@@ -165,14 +166,14 @@ const Schedule = () => {
               animation="fade-in-up" 
               delay={300 + dayIndex * 200}
             >
-              <div className="bg-white rounded-xl border border-gray-100 smooth-shadow p-8">
+              <div className="bg-charcoal rounded-xl border border-gray-700 smooth-shadow p-8">
                 <div className="flex items-center mb-8">
-                  <div className="w-16 h-16 flex items-center justify-center rounded-xl bg-primary/10 text-primary mr-6">
+                  <div className="w-16 h-16 flex items-center justify-center rounded-xl bg-orange/10 text-orange mr-6">
                     <CalendarDays className="w-8 h-8" />
                   </div>
                   <div>
-                    <h3 className="text-2xl font-semibold">{day.day}</h3>
-                    <p className="text-gray-500">{day.date}</p>
+                    <h3 className="text-2xl font-semibold text-white">{day.day}</h3>
+                    <p className="text-gray-400">{day.date}</p>
                   </div>
                 </div>
                 
@@ -180,21 +181,21 @@ const Schedule = () => {
                   {day.events.map((event, eventIndex) => (
                     <div 
                       key={eventIndex} 
-                      className="border-l-2 border-primary/20 pl-6 pb-6 relative"
+                      className="border-l-2 border-orange/20 pl-6 pb-6 relative"
                     >
-                      <div className="absolute w-4 h-4 bg-primary rounded-full -left-[9px] top-1"></div>
+                      <div className="absolute w-4 h-4 bg-orange rounded-full -left-[9px] top-1"></div>
                       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                         <div>
-                          <h4 className="text-xl font-medium">{event.title}</h4>
-                          <p className="text-gray-600 mt-1">{event.description}</p>
+                          <h4 className="text-xl font-medium text-white">{event.title}</h4>
+                          <p className="text-gray-400 mt-1">{event.description}</p>
                         </div>
-                        <div className="flex flex-col sm:flex-row gap-3 text-sm text-gray-500">
+                        <div className="flex flex-col sm:flex-row gap-3 text-sm text-gray-400">
                           <div className="flex items-center">
-                            <Clock className="w-4 h-4 mr-2 text-primary/70" />
+                            <Clock className="w-4 h-4 mr-2 text-orange/70" />
                             <span>{event.time}</span>
                           </div>
                           <div className="flex items-center">
-                            <MapPin className="w-4 h-4 mr-2 text-primary/70" />
+                            <MapPin className="w-4 h-4 mr-2 text-orange/70" />
                             <span>{event.location}</span>
                           </div>
                         </div>
@@ -208,9 +209,9 @@ const Schedule = () => {
         </div>
         
         <Transition animation="fade-in-up" delay={900} className="mt-16">
-          <div className="bg-primary/5 p-8 md:p-12 rounded-2xl smooth-shadow text-center">
-            <h3 className="text-2xl font-semibold mb-4">Need More Details?</h3>
-            <p className="text-gray-600 mb-6">
+          <div className="bg-charcoal/70 p-8 md:p-12 rounded-2xl border border-gray-700 smooth-shadow text-center">
+            <h3 className="text-2xl font-semibold mb-4 text-white">Need More Details?</h3>
+            <p className="text-gray-300 mb-6">
               Download the complete schedule with all workshops, mentor sessions, 
               and activities to plan your hackathon experience.
             </p>

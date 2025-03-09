@@ -50,7 +50,7 @@ const FAQ = () => {
   };
 
   return (
-    <section id="faq" className="section-padding bg-gray-50">
+    <section id="faq" className="section-padding bg-charcoal">
       <div className="container mx-auto px-6">
         <Transition animation="fade-in-up">
           <h2 className="section-heading">Frequently Asked Questions</h2>
@@ -70,16 +70,16 @@ const FAQ = () => {
               animation="fade-in-up" 
               delay={300 + index * 100}
             >
-              <div className="bg-white rounded-xl border border-gray-100 smooth-shadow overflow-hidden">
+              <div className="bg-charcoal-light rounded-xl border border-gray-700 smooth-shadow overflow-hidden">
                 <button
                   className="w-full p-6 text-left flex justify-between items-center focus:outline-none"
                   onClick={() => toggleAccordion(index)}
                   aria-expanded={activeIndex === index}
                 >
-                  <h3 className="text-lg font-medium">{item.question}</h3>
+                  <h3 className="text-lg font-medium text-white">{item.question}</h3>
                   <span className="ml-6 flex-shrink-0">
                     {activeIndex === index ? (
-                      <ChevronUp className="w-5 h-5 text-primary" />
+                      <ChevronUp className="w-5 h-5 text-orange" />
                     ) : (
                       <ChevronDown className="w-5 h-5 text-gray-400" />
                     )}
@@ -93,7 +93,7 @@ const FAQ = () => {
                       : 'max-h-0 opacity-0'
                   }`}
                 >
-                  <div className="p-6 pt-0 text-gray-600">
+                  <div className="p-6 pt-0 text-gray-300">
                     {item.answer}
                   </div>
                 </div>
@@ -103,9 +103,9 @@ const FAQ = () => {
         </div>
         
         <Transition animation="fade-in-up" delay={900} className="mt-16">
-          <div className="bg-white p-8 md:p-12 rounded-2xl border border-gray-100 smooth-shadow text-center max-w-3xl mx-auto">
-            <h3 className="text-2xl font-semibold mb-4">Still Have Questions?</h3>
-            <p className="text-gray-600 mb-8">
+          <div className="bg-charcoal-light p-8 md:p-12 rounded-2xl border border-gray-700 smooth-shadow text-center max-w-3xl mx-auto">
+            <h3 className="text-2xl font-semibold mb-4 text-white">Still Have Questions?</h3>
+            <p className="text-gray-300 mb-8">
               Can't find the answer you're looking for? Feel free to reach out to our team directly.
             </p>
             <a href="#contact" className="button-primary">

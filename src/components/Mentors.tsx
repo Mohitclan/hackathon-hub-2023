@@ -6,7 +6,7 @@ import Transition from './Transition';
 
 const Mentors = () => {
   return (
-    <section id="mentors" className="section-padding bg-gray-50">
+    <section id="mentors" className="section-padding bg-charcoal">
       <div className="container mx-auto px-6">
         <Transition animation="fade-in-up">
           <h2 className="section-heading">Meet Our Mentors</h2>
@@ -26,7 +26,7 @@ const Mentors = () => {
               animation="fade-in-up" 
               delay={300 + index * 100}
             >
-              <div className="bg-white rounded-xl border border-gray-100 smooth-shadow overflow-hidden hover-scale h-full">
+              <div className="bg-charcoal-light rounded-xl border border-gray-700 smooth-shadow overflow-hidden hover-scale h-full">
                 <div className="relative h-64 sm:h-56 md:h-64 overflow-hidden">
                   <img 
                     src={mentor.image} 
@@ -36,18 +36,18 @@ const Mentors = () => {
                 </div>
                 
                 <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-1">{mentor.name}</h3>
-                  <p className="text-primary font-medium mb-2">{mentor.role}</p>
-                  <p className="text-gray-500 text-sm mb-4">{mentor.company}</p>
+                  <h3 className="text-xl font-semibold mb-1 text-white">{mentor.name}</h3>
+                  <p className="text-orange font-medium mb-2">{mentor.role}</p>
+                  <p className="text-gray-400 text-sm mb-4">{mentor.company}</p>
                   
                   <div className="flex space-x-3">
-                    <a href="#" className="text-gray-400 hover:text-primary transition-colors" aria-label={`${mentor.name}'s LinkedIn`}>
+                    <a href="#" className="text-gray-400 hover:text-orange transition-colors" aria-label={`${mentor.name}'s LinkedIn`}>
                       <Linkedin className="w-5 h-5" />
                     </a>
-                    <a href="#" className="text-gray-400 hover:text-primary transition-colors" aria-label={`${mentor.name}'s Twitter`}>
+                    <a href="#" className="text-gray-400 hover:text-orange transition-colors" aria-label={`${mentor.name}'s Twitter`}>
                       <Twitter className="w-5 h-5" />
                     </a>
-                    <a href="#" className="text-gray-400 hover:text-primary transition-colors" aria-label={`${mentor.name}'s GitHub`}>
+                    <a href="#" className="text-gray-400 hover:text-orange transition-colors" aria-label={`${mentor.name}'s GitHub`}>
                       <Github className="w-5 h-5" />
                     </a>
                   </div>
@@ -58,9 +58,9 @@ const Mentors = () => {
         </div>
         
         <Transition animation="fade-in-up" delay={700} className="mt-16">
-          <div className="bg-white p-8 md:p-12 rounded-2xl border border-gray-100 smooth-shadow text-center max-w-3xl mx-auto">
-            <h3 className="text-2xl font-semibold mb-4">Become a Mentor</h3>
-            <p className="text-gray-600 mb-8">
+          <div className="bg-charcoal-light p-8 md:p-12 rounded-2xl border border-gray-700 smooth-shadow text-center max-w-3xl mx-auto">
+            <h3 className="text-2xl font-semibold mb-4 text-white">Become a Mentor</h3>
+            <p className="text-gray-300 mb-8">
               Are you an industry expert who'd like to share your knowledge with our participants?
               Join our team of mentors and help shape the next generation of tech innovators.
             </p>
