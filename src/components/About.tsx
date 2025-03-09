@@ -1,29 +1,49 @@
 
 import React from 'react';
-import { Code, Users, Trophy, Lightbulb } from 'lucide-react';
+import { Code, Users, Trophy, Lightbulb, Server, ShieldCheck, Cpu, Heart } from 'lucide-react';
 import Transition from './Transition';
 
 const About = () => {
   const features = [
     {
       icon: <Code className="w-6 h-6 text-orange" />,
-      title: 'Innovative Coding',
-      description: "Push the boundaries of what's possible with code. Develop cutting-edge solutions to real-world problems."
+      title: "AI & Machine Learning",
+      description: "Develop innovative solutions using artificial intelligence and machine learning technologies."
     },
     {
-      icon: <Users className="w-6 h-6 text-orange" />,
-      title: 'Team Collaboration',
-      description: "Form teams of up to 4 people and combine your unique skills to create something amazing together."
+      icon: <Server className="w-6 h-6 text-orange" />,
+      title: "Cloud Computing",
+      description: "Create scalable applications leveraging cloud platforms and services."
     },
     {
-      icon: <Trophy className="w-6 h-6 text-orange" />,
-      title: 'Amazing Prizes',
-      description: "Win incredible rewards including cash prizes, the latest tech gadgets, and exclusive career opportunities."
+      icon: <Cpu className="w-6 h-6 text-orange" />,
+      title: "IoT & Smart Automation",
+      description: "Build connected devices and automation systems to solve real-world problems."
+    },
+    {
+      icon: <ShieldCheck className="w-6 h-6 text-orange" />,
+      title: "Cybersecurity & Blockchain",
+      description: "Design secure applications and explore blockchain technology for various use cases."
     },
     {
       icon: <Lightbulb className="w-6 h-6 text-orange" />,
-      title: 'Learning Opportunities',
-      description: "Gain invaluable experience, learn from industry experts, and enhance your technical and soft skills."
+      title: "Sustainable Tech",
+      description: "Develop green solutions addressing environmental challenges through technology."
+    },
+    {
+      icon: <Users className="w-6 h-6 text-orange" />,
+      title: "AR/VR Development",
+      description: "Create immersive experiences using augmented and virtual reality technologies."
+    },
+    {
+      icon: <Heart className="w-6 h-6 text-orange" />,
+      title: "HealthTech",
+      description: "Innovate healthcare solutions to improve patient care and medical processes."
+    },
+    {
+      icon: <Trophy className="w-6 h-6 text-orange" />,
+      title: "Open Innovation",
+      description: "Explore creative solutions beyond the predefined themes with your unique ideas."
     }
   ];
 
@@ -36,18 +56,23 @@ const About = () => {
         
         <Transition animation="fade-in-up" delay={200}>
           <p className="section-subheading text-gray-300">
-            HACKरण is a 48-hour coding marathon where creativity meets technology. 
-            Participants form teams to solve challenges and develop innovative solutions, 
-            with mentorship from industry experts and exciting prizes for the winners.
+            HACKरण is a 30-hour coding marathon where creativity meets technology.
+            Organized by GEEK ROOM at JIMS Engineering Management Technical Campus,
+            this event encourages innovation, problem-solving, and collaboration by addressing 
+            real-world challenges in an interactive and competitive environment.
           </p>
         </Transition>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
+          <Transition animation="fade-in-up" delay={300} className="col-span-full">
+            <h3 className="text-2xl font-semibold mb-6 text-orange text-center">Hackathon Themes</h3>
+          </Transition>
+          
           {features.map((feature, index) => (
             <Transition 
               key={index} 
               animation="fade-in-up" 
-              delay={300 + index * 100}
+              delay={400 + index * 100}
             >
               <div className="bg-charcoal p-8 rounded-xl border border-orange/10 smooth-shadow hover-scale h-full">
                 <div className="w-12 h-12 flex items-center justify-center rounded-lg bg-orange/10 mb-6">
@@ -60,16 +85,37 @@ const About = () => {
           ))}
         </div>
         
-        <Transition animation="fade-in-up" delay={700}>
-          <div className="bg-gradient-to-r from-charcoal to-charcoal-light p-8 md:p-12 rounded-2xl smooth-shadow mt-16 border border-orange/10">
+        <Transition animation="fade-in-up" delay={1000} className="mt-16">
+          <div className="bg-gradient-to-r from-charcoal to-charcoal-light p-8 md:p-12 rounded-2xl smooth-shadow border border-orange/10">
+            <h3 className="text-2xl font-semibold mb-6 text-white">Event Structure</h3>
+            <div className="space-y-6">
+              <div>
+                <h4 className="text-xl font-semibold text-orange mb-2">Elimination Round</h4>
+                <ul className="list-disc pl-5 text-gray-300 space-y-2">
+                  <li>Teams will submit a project and presentation on the given problem statements.</li>
+                  <li>A panel of experts will review the submissions and shortlist 10 teams for the final round.</li>
+                  <li>No limit on the number of participating teams.</li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="text-xl font-semibold text-orange mb-2">Final Round</h4>
+                <ul className="list-disc pl-5 text-gray-300 space-y-2">
+                  <li>Shortlisted teams will have to complete their projects with prototype and present them to the jury.</li>
+                  <li>Up to 10 teams will participate in the final round.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </Transition>
+        
+        <Transition animation="fade-in-up" delay={1200}>
+          <div className="bg-gradient-to-r from-charcoal to-charcoal-light p-8 md:p-12 rounded-2xl smooth-shadow mt-8 border border-orange/10">
             <blockquote className="text-lg md:text-xl text-gray-300 italic text-center">
-              "Participating in last year's hackathon was a game-changer for me. 
-              Not only did I learn new technologies, but I also made connections 
-              that led to my current job. It's an experience I'll never forget."
+              "The goal of HACKरण 2025 is to establish JIMS Engineering Management Technical Campus as a leading institution fostering technical creativity and excellence."
             </blockquote>
             <div className="mt-6 text-center">
-              <p className="font-semibold text-orange">Emma Williams</p>
-              <p className="text-sm text-gray-400">Previous Participant, Now Software Engineer at TechGiant</p>
+              <p className="font-semibold text-orange">GEEK ROOM</p>
+              <p className="text-sm text-gray-400">Organizing Committee</p>
             </div>
           </div>
         </Transition>

@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Check, User, Mail, Users, Briefcase, Code } from 'lucide-react';
 import Transition from './Transition';
@@ -69,8 +68,8 @@ const Registration = () => {
                         </div>
                       </div>
                       <div>
-                        <h4 className="font-medium">Learn & Grow</h4>
-                        <p className="text-gray-600 text-sm mt-1">Enhance your skills and learn from experts.</p>
+                        <h4 className="font-medium">Prize Pool</h4>
+                        <p className="text-gray-600 text-sm mt-1">First: ₹12,000 | Second: ₹8,000 | Third: ₹6,000 | Special: ₹4,000</p>
                       </div>
                     </div>
                     
@@ -82,7 +81,7 @@ const Registration = () => {
                       </div>
                       <div>
                         <h4 className="font-medium">Network</h4>
-                        <p className="text-gray-600 text-sm mt-1">Connect with like-minded individuals and potential employers.</p>
+                        <p className="text-gray-600 text-sm mt-1">Connect with students from across India and potential employers.</p>
                       </div>
                     </div>
                     
@@ -93,8 +92,8 @@ const Registration = () => {
                         </div>
                       </div>
                       <div>
-                        <h4 className="font-medium">Win Prizes</h4>
-                        <p className="text-gray-600 text-sm mt-1">Compete for exciting prizes and recognition.</p>
+                        <h4 className="font-medium">Two-Stage Competition</h4>
+                        <p className="text-gray-600 text-sm mt-1">Elimination round followed by an exciting 30-hour final hackathon.</p>
                       </div>
                     </div>
                     
@@ -105,15 +104,15 @@ const Registration = () => {
                         </div>
                       </div>
                       <div>
-                        <h4 className="font-medium">Build Your Portfolio</h4>
-                        <p className="text-gray-600 text-sm mt-1">Create projects that showcase your abilities to future employers.</p>
+                        <h4 className="font-medium">Organized by GEEK ROOM</h4>
+                        <p className="text-gray-600 text-sm mt-1">JIMS Engineering Management Technical Campus's premier tech club.</p>
                       </div>
                     </div>
                   </div>
                   
                   <div className="mt-8 pt-6 border-t border-gray-200">
                     <p className="text-sm text-gray-500">
-                      Registration closes on <span className="font-semibold">October 10, 2023</span>.
+                      Registration closes on <span className="font-semibold">September 10, 2025</span>.
                       Limited spots available, so register early!
                     </p>
                   </div>
@@ -171,7 +170,7 @@ const Registration = () => {
                         
                         <div>
                           <label htmlFor="teamName" className="block text-sm font-medium text-gray-700 mb-1">
-                            Team Name (optional)
+                            Team Name *
                           </label>
                           <div className="relative">
                             <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -183,15 +182,16 @@ const Registration = () => {
                               name="teamName"
                               value={form.teamName}
                               onChange={handleChange}
+                              required
                               className="pl-10 w-full rounded-lg border border-gray-300 focus:ring-primary focus:border-primary p-3"
-                              placeholder="Leave blank if joining solo or forming team at event"
+                              placeholder="Your team name"
                             />
                           </div>
                         </div>
                         
                         <div>
                           <label htmlFor="experience" className="block text-sm font-medium text-gray-700 mb-1">
-                            Coding Experience *
+                            Preferred Theme *
                           </label>
                           <div className="relative">
                             <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -205,11 +205,15 @@ const Registration = () => {
                               required
                               className="pl-10 w-full rounded-lg border border-gray-300 focus:ring-primary focus:border-primary p-3 appearance-none"
                             >
-                              <option value="">Select your experience level</option>
-                              <option value="Beginner">Beginner (0-1 years)</option>
-                              <option value="Intermediate">Intermediate (1-3 years)</option>
-                              <option value="Advanced">Advanced (3+ years)</option>
-                              <option value="Professional">Professional</option>
+                              <option value="">Select your preferred theme</option>
+                              <option value="AI">AI & Machine Learning</option>
+                              <option value="Cloud">Cloud Computing</option>
+                              <option value="IoT">IoT & Smart Automation</option>
+                              <option value="Security">Cybersecurity & Blockchain</option>
+                              <option value="Sustainability">Sustainable Tech & Green Solutions</option>
+                              <option value="AR/VR">AR/VR Development</option>
+                              <option value="HealthTech">HealthTech</option>
+                              <option value="Open">Open Innovation</option>
                             </select>
                           </div>
                         </div>

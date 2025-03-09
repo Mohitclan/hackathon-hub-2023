@@ -28,7 +28,7 @@ const Hero = () => {
           <div className="w-full md:w-1/2 md:pr-8">
             <Transition animation="fade-in-up" delay={100}>
               <span className="px-3 py-1 rounded-full text-sm font-medium bg-orange/20 text-orange inline-block mb-6">
-                September 19-20, 2025
+                September 19, 2025
               </span>
             </Transition>
             
@@ -40,7 +40,7 @@ const Hero = () => {
             
             <Transition animation="fade-in-up" delay={500}>
               <p className="text-lg text-gray-300 mb-8 max-w-lg">
-                Collaborate with innovators, build game-changing solutions, and win exciting prizes in this premier coding event of the year.
+                Collaborate with innovators, build game-changing solutions, and win exciting prizes in this premier coding event organized by GEEK ROOM at JIMSEMTC.
               </p>
             </Transition>
             
@@ -60,7 +60,7 @@ const Hero = () => {
                 <div className="flex flex-col md:flex-row justify-between gap-4">
                   <div className="text-center">
                     <p className="text-orange font-bold">Prize Pool</p>
-                    <p className="text-white text-sm">₹1,50,000+</p>
+                    <p className="text-white text-sm">₹30,000+</p>
                   </div>
                   <div className="text-center">
                     <p className="text-orange font-bold">Duration</p>

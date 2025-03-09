@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { CalendarDays, Clock, MapPin } from 'lucide-react';
 import Transition from './Transition';
@@ -6,26 +5,68 @@ import Transition from './Transition';
 const Schedule = () => {
   const scheduleItems = [
     {
-      day: "Day 1",
-      date: "October 15, 2023",
+      day: "Preparation Phase",
+      date: "August - September 2025",
+      events: [
+        {
+          time: "August 15 - September 10, 2025",
+          title: "Registration Period",
+          description: "Teams can register and prepare for the elimination round.",
+          location: "Online"
+        },
+        {
+          time: "September 10, 2025",
+          title: "Registration Deadline",
+          description: "Last day to register for the hackathon.",
+          location: "Online"
+        },
+        {
+          time: "September 12, 2025",
+          title: "Problem Statement Release",
+          description: "Teams receive the problem statements for the elimination round.",
+          location: "Online"
+        }
+      ]
+    },
+    {
+      day: "Elimination Round",
+      date: "September 14-18, 2025",
+      events: [
+        {
+          time: "September 14-18, 2025",
+          title: "Project Submission Window",
+          description: "Teams must submit their projects and presentations.",
+          location: "Online"
+        },
+        {
+          time: "September 18, 2025",
+          title: "Results Announcement",
+          description: "Top 10 teams advancing to the final round will be announced.",
+          location: "Online"
+        }
+      ]
+    },
+    {
+      day: "Hackathon Day 1",
+      date: "September 19, 2025",
       events: [
         {
           time: "09:00 AM - 10:00 AM",
           title: "Registration & Breakfast",
           description: "Check in and enjoy breakfast while networking with fellow participants.",
-          location: "Main Hall"
+          location: "JIMSEMTC Main Hall"
         },
         {
           time: "10:00 AM - 11:00 AM",
           title: "Opening Ceremony",
           description: "Welcome address, introduction to sponsors, and hackathon guidelines.",
-          location: "Auditorium"
+          location: "JIMSEMTC Auditorium"
         },
         {
           time: "11:00 AM - 12:00 PM",
-          title: "Team Formation",
-          description: "Find team members or finalize your existing team.",
-          location: "Collaboration Space"
+          title: "Team Introduction",
+          description: "Teams introduce themselves and their project concepts.",
+          location: "JIMSEMTC Auditorium"
         },
         {
           time: "12:00 PM - 01:00 PM",
@@ -36,20 +77,26 @@ const Schedule = () => {
         {
           time: "01:00 PM",
           title: "Hacking Begins!",
-          description: "Start working on your projects.",
-          location: "All Venues"
+          description: "Teams start working on their prototypes.",
+          location: "Assigned Labs"
         },
         {
           time: "06:00 PM - 07:00 PM",
           title: "Dinner",
           description: "Take a break and recharge.",
           location: "Dining Area"
+        },
+        {
+          time: "10:00 PM",
+          title: "Mentor Check-in",
+          description: "Teams meet with mentors for guidance and feedback.",
+          location: "Assigned Labs"
         }
       ]
     },
     {
-      day: "Day 2",
-      date: "October 16, 2023",
+      day: "Hackathon Day 2",
+      date: "September 20, 2025",
       events: [
         {
           time: "09:00 AM - 10:00 AM",
@@ -58,64 +105,40 @@ const Schedule = () => {
           location: "Dining Area"
         },
         {
-          time: "10:00 AM - 11:00 AM",
-          title: "Workshop: Advanced AI",
-          description: "Learn about implementing AI in your projects.",
-          location: "Workshop Room A"
-        },
-        {
-          time: "02:00 PM - 03:00 PM",
-          title: "Workshop: UI/UX Design",
-          description: "Tips and tricks for better user experience design.",
-          location: "Workshop Room B"
-        },
-        {
-          time: "06:00 PM - 07:00 PM",
-          title: "Dinner",
-          description: "Evening meal and networking.",
-          location: "Dining Area"
-        }
-      ]
-    },
-    {
-      day: "Day 3",
-      date: "October 17, 2023",
-      events: [
-        {
-          time: "09:00 AM - 10:00 AM",
-          title: "Breakfast",
-          description: "Final day breakfast.",
-          location: "Dining Area"
-        },
-        {
-          time: "12:00 PM",
-          title: "Hacking Ends",
-          description: "All projects must be submitted by this time.",
-          location: "All Venues"
-        },
-        {
           time: "12:00 PM - 01:00 PM",
-          title: "Lunch",
-          description: "Lunch break before presentations.",
+          title: "Lunch Break",
+          description: "Mid-day meal break.",
           location: "Dining Area"
         },
         {
-          time: "01:00 PM - 04:00 PM",
-          title: "Project Presentations",
-          description: "Teams present their projects to judges.",
-          location: "Auditorium"
+          time: "04:00 PM",
+          title: "Hacking Ends",
+          description: "All teams must finalize their projects by this time.",
+          location: "Assigned Labs"
         },
         {
-          time: "04:00 PM - 05:00 PM",
-          title: "Judging & Deliberation",
-          description: "Judges evaluate projects and select winners.",
-          location: "Judging Room"
+          time: "04:30 PM - 06:30 PM",
+          title: "Final Presentations",
+          description: "Teams present their prototypes to judges and audience.",
+          location: "JIMSEMTC Auditorium"
         },
         {
-          time: "05:00 PM - 06:00 PM",
-          title: "Closing Ceremony & Awards",
-          description: "Announcement of winners and prize distribution.",
-          location: "Auditorium"
+          time: "06:30 PM - 07:00 PM",
+          title: "Judge Deliberation",
+          description: "Panel evaluates all projects and selects winners.",
+          location: "Judges' Room"
+        },
+        {
+          time: "07:00 PM - 08:00 PM",
+          title: "Award Ceremony",
+          description: "Winning teams announced and prizes distributed.",
+          location: "JIMSEMTC Auditorium"
+        },
+        {
+          time: "08:00 PM - 09:00 PM",
+          title: "Closing Dinner",
+          description: "Celebration dinner for all participants.",
+          location: "Dining Area"
         }
       ]
     }
@@ -130,8 +153,8 @@ const Schedule = () => {
         
         <Transition animation="fade-in-up" delay={200}>
           <p className="section-subheading">
-            Here's what you can expect during our three-day hackathon event.
-            Check back frequently as we may update the schedule with additional workshops and activities.
+            Here's what you can expect during our HACKरण 2025 event.
+            The hackathon consists of an elimination round followed by a 30-hour final round.
           </p>
         </Transition>
         
