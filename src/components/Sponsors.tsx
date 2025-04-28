@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { SPONSORS } from '@/assets';
 import Transition from './Transition';
