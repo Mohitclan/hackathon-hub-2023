@@ -1,5 +1,6 @@
+
 import React, { useState } from 'react';
-import { Check, User, Mail, Users, Briefcase, Code } from 'lucide-react';
+import { Check, User, Mail, Users, Briefcase, Code, Shield, Star } from 'lucide-react';
 import Transition from './Transition';
 import { useToast } from '@/hooks/use-toast';
 
@@ -40,10 +41,20 @@ const Registration = () => {
   };
 
   return (
-    <section id="register" className="section-padding bg-white">
-      <div className="container mx-auto px-6">
+    <section id="register" className="section-padding bg-marvel-navy relative">
+      {/* Tech pattern background */}
+      <div className="absolute inset-0 tech-pattern opacity-10 pointer-events-none"></div>
+      
+      {/* Glowing orbs */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-marvel-blue/10 rounded-full filter blur-[100px] pointer-events-none"></div>
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-marvel-red/5 rounded-full filter blur-[100px] pointer-events-none"></div>
+      
+      <div className="container mx-auto px-6 relative z-10">
         <Transition animation="fade-in-up">
-          <h2 className="section-heading">Register Now</h2>
+          <div className="flex items-center justify-center gap-3 mb-6">
+            <Shield className="h-8 w-8 text-marvel-red animate-pulse-slow" />
+            <h2 className="section-heading inline-block">Register Now</h2>
+          </div>
         </Transition>
         
         <Transition animation="fade-in-up" delay={200}>
@@ -57,62 +68,62 @@ const Registration = () => {
           <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
             <div className="md:col-span-2">
               <Transition animation="fade-in-up" delay={300}>
-                <div className="bg-primary/5 p-8 rounded-xl smooth-shadow h-full flex flex-col">
-                  <h3 className="text-2xl font-semibold mb-6">Why Register?</h3>
+                <div className="marvel-card p-8 h-full flex flex-col border border-marvel-grey/30">
+                  <h3 className="text-2xl font-semibold mb-6 font-orbitron text-marvel-cyan">Why Register?</h3>
                   
                   <div className="space-y-6 flex-grow">
                     <div className="flex">
                       <div className="flex-shrink-0 mr-4">
-                        <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
-                          <Check className="w-5 h-5 text-primary" />
+                        <div className="w-8 h-8 rounded-full bg-marvel-red/20 flex items-center justify-center">
+                          <Check className="w-5 h-5 text-marvel-red" />
                         </div>
                       </div>
                       <div>
-                        <h4 className="font-medium">Prize Pool</h4>
-                        <p className="text-gray-600 text-sm mt-1">First: ₹12,000 | Second: ₹8,000 | Third: ₹6,000 | Special: ₹4,000</p>
+                        <h4 className="font-medium text-white">Prize Pool</h4>
+                        <p className="text-gray-400 text-sm mt-1">First: ₹12,000 | Second: ₹8,000 | Third: ₹6,000 | Special: ₹4,000</p>
                       </div>
                     </div>
                     
                     <div className="flex">
                       <div className="flex-shrink-0 mr-4">
-                        <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
-                          <Check className="w-5 h-5 text-primary" />
+                        <div className="w-8 h-8 rounded-full bg-marvel-blue/20 flex items-center justify-center">
+                          <Check className="w-5 h-5 text-marvel-blue" />
                         </div>
                       </div>
                       <div>
-                        <h4 className="font-medium">Network</h4>
-                        <p className="text-gray-600 text-sm mt-1">Connect with students from across India and potential employers.</p>
+                        <h4 className="font-medium text-white">Network</h4>
+                        <p className="text-gray-400 text-sm mt-1">Connect with students from across India and potential employers.</p>
                       </div>
                     </div>
                     
                     <div className="flex">
                       <div className="flex-shrink-0 mr-4">
-                        <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
-                          <Check className="w-5 h-5 text-primary" />
+                        <div className="w-8 h-8 rounded-full bg-marvel-cyan/20 flex items-center justify-center">
+                          <Check className="w-5 h-5 text-marvel-cyan" />
                         </div>
                       </div>
                       <div>
-                        <h4 className="font-medium">Two-Stage Competition</h4>
-                        <p className="text-gray-600 text-sm mt-1">Elimination round followed by an exciting 30-hour final hackathon.</p>
+                        <h4 className="font-medium text-white">Two-Stage Competition</h4>
+                        <p className="text-gray-400 text-sm mt-1">Elimination round followed by an exciting 30-hour final hackathon.</p>
                       </div>
                     </div>
                     
                     <div className="flex">
                       <div className="flex-shrink-0 mr-4">
-                        <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
-                          <Check className="w-5 h-5 text-primary" />
+                        <div className="w-8 h-8 rounded-full bg-marvel-captain/20 flex items-center justify-center">
+                          <Check className="w-5 h-5 text-marvel-captain" />
                         </div>
                       </div>
                       <div>
-                        <h4 className="font-medium">Organized by GEEK ROOM</h4>
-                        <p className="text-gray-600 text-sm mt-1">JIMS Engineering Management Technical Campus's premier tech club.</p>
+                        <h4 className="font-medium text-white">Organized by GEEK ROOM</h4>
+                        <p className="text-gray-400 text-sm mt-1">JIMS Engineering Management Technical Campus's premier tech club.</p>
                       </div>
                     </div>
                   </div>
                   
-                  <div className="mt-8 pt-6 border-t border-gray-200">
-                    <p className="text-sm text-gray-500">
-                      Registration closes on <span className="font-semibold">September 10, 2025</span>.
+                  <div className="mt-8 pt-6 border-t border-marvel-grey/30">
+                    <p className="text-sm text-gray-400">
+                      Registration closes on <span className="font-semibold text-marvel-cyan">September 10, 2025</span>.
                       Limited spots available, so register early!
                     </p>
                   </div>
@@ -122,17 +133,17 @@ const Registration = () => {
             
             <div className="md:col-span-3">
               <Transition animation="fade-in-up" delay={400}>
-                <div className="bg-white p-8 rounded-xl border border-gray-100 smooth-shadow">
+                <div className="marvel-card p-8 border border-marvel-grey/30">
                   {!submitted ? (
                     <form onSubmit={handleSubmit}>
                       <div className="space-y-6">
                         <div>
-                          <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+                          <label htmlFor="name" className="block text-sm font-medium text-marvel-cyan mb-1">
                             Full Name *
                           </label>
                           <div className="relative">
                             <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                              <User className="h-5 w-5 text-gray-400" />
+                              <User className="h-5 w-5 text-marvel-grey" />
                             </div>
                             <input
                               type="text"
@@ -141,19 +152,19 @@ const Registration = () => {
                               value={form.name}
                               onChange={handleChange}
                               required
-                              className="pl-10 w-full rounded-lg border border-gray-300 focus:ring-primary focus:border-primary p-3"
+                              className="pl-10 w-full rounded-lg border border-marvel-grey/50 bg-marvel-navy/50 focus:ring-marvel-cyan focus:border-marvel-cyan p-3 text-white"
                               placeholder="John Doe"
                             />
                           </div>
                         </div>
                         
                         <div>
-                          <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                          <label htmlFor="email" className="block text-sm font-medium text-marvel-cyan mb-1">
                             Email Address *
                           </label>
                           <div className="relative">
                             <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                              <Mail className="h-5 w-5 text-gray-400" />
+                              <Mail className="h-5 w-5 text-marvel-grey" />
                             </div>
                             <input
                               type="email"
@@ -162,19 +173,19 @@ const Registration = () => {
                               value={form.email}
                               onChange={handleChange}
                               required
-                              className="pl-10 w-full rounded-lg border border-gray-300 focus:ring-primary focus:border-primary p-3"
+                              className="pl-10 w-full rounded-lg border border-marvel-grey/50 bg-marvel-navy/50 focus:ring-marvel-cyan focus:border-marvel-cyan p-3 text-white"
                               placeholder="john@example.com"
                             />
                           </div>
                         </div>
                         
                         <div>
-                          <label htmlFor="teamName" className="block text-sm font-medium text-gray-700 mb-1">
+                          <label htmlFor="teamName" className="block text-sm font-medium text-marvel-cyan mb-1">
                             Team Name *
                           </label>
                           <div className="relative">
                             <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                              <Users className="h-5 w-5 text-gray-400" />
+                              <Users className="h-5 w-5 text-marvel-grey" />
                             </div>
                             <input
                               type="text"
@@ -183,19 +194,19 @@ const Registration = () => {
                               value={form.teamName}
                               onChange={handleChange}
                               required
-                              className="pl-10 w-full rounded-lg border border-gray-300 focus:ring-primary focus:border-primary p-3"
+                              className="pl-10 w-full rounded-lg border border-marvel-grey/50 bg-marvel-navy/50 focus:ring-marvel-cyan focus:border-marvel-cyan p-3 text-white"
                               placeholder="Your team name"
                             />
                           </div>
                         </div>
                         
                         <div>
-                          <label htmlFor="experience" className="block text-sm font-medium text-gray-700 mb-1">
+                          <label htmlFor="experience" className="block text-sm font-medium text-marvel-cyan mb-1">
                             Preferred Theme *
                           </label>
                           <div className="relative">
                             <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                              <Code className="h-5 w-5 text-gray-400" />
+                              <Code className="h-5 w-5 text-marvel-grey" />
                             </div>
                             <select
                               id="experience"
@@ -203,7 +214,7 @@ const Registration = () => {
                               value={form.experience}
                               onChange={handleChange}
                               required
-                              className="pl-10 w-full rounded-lg border border-gray-300 focus:ring-primary focus:border-primary p-3 appearance-none"
+                              className="pl-10 w-full rounded-lg border border-marvel-grey/50 bg-marvel-navy/50 focus:ring-marvel-cyan focus:border-marvel-cyan p-3 text-white appearance-none"
                             >
                               <option value="">Select your preferred theme</option>
                               <option value="AI">AI & Machine Learning</option>
@@ -219,7 +230,7 @@ const Registration = () => {
                         </div>
                         
                         <div>
-                          <label htmlFor="specialRequests" className="block text-sm font-medium text-gray-700 mb-1">
+                          <label htmlFor="specialRequests" className="block text-sm font-medium text-marvel-cyan mb-1">
                             Special Requests or Accommodations (optional)
                           </label>
                           <textarea
@@ -228,7 +239,7 @@ const Registration = () => {
                             value={form.specialRequests}
                             onChange={handleChange}
                             rows={4}
-                            className="w-full rounded-lg border border-gray-300 focus:ring-primary focus:border-primary p-3"
+                            className="w-full rounded-lg border border-marvel-grey/50 bg-marvel-navy/50 focus:ring-marvel-cyan focus:border-marvel-cyan p-3 text-white"
                             placeholder="Any dietary restrictions, accessibility needs, or other requirements"
                           ></textarea>
                         </div>
@@ -236,12 +247,14 @@ const Registration = () => {
                         <div className="mt-8">
                           <button
                             type="submit"
-                            className="w-full button-primary flex items-center justify-center"
+                            className="w-full button-danger flex items-center justify-center"
                             disabled={loading}
                           >
                             {loading ? (
                               <div className="animate-spin h-5 w-5 border-2 border-white border-t-transparent rounded-full mr-2"></div>
-                            ) : null}
+                            ) : (
+                              <Star className="h-5 w-5 mr-2" />
+                            )}
                             {loading ? "Processing..." : "Submit Registration"}
                           </button>
                         </div>
@@ -249,11 +262,11 @@ const Registration = () => {
                     </form>
                   ) : (
                     <div className="text-center py-12">
-                      <div className="w-16 h-16 bg-green-100 text-green-600 rounded-full mx-auto flex items-center justify-center mb-6">
+                      <div className="w-16 h-16 bg-marvel-blue/20 text-marvel-cyan rounded-full mx-auto flex items-center justify-center mb-6 shadow-glow">
                         <Check className="w-8 h-8" />
                       </div>
-                      <h3 className="text-2xl font-semibold mb-4">Registration Complete!</h3>
-                      <p className="text-gray-600 mb-8">
+                      <h3 className="text-2xl font-semibold mb-4 font-orbitron">Registration Complete!</h3>
+                      <p className="text-gray-300 mb-8">
                         Thank you for registering for our hackathon! We've sent a confirmation email with all the details.
                       </p>
                       <button

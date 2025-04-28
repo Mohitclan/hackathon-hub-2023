@@ -18,7 +18,8 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="overflow-x-hidden bg-charcoal-dark">
+    <div className="overflow-x-hidden bg-gradient-to-b from-marvel-navy to-marvel-navy/90">
+      <div className="tech-pattern fixed inset-0 z-0 pointer-events-none opacity-20"></div>
       <Navbar />
       <Hero />
       <About />
