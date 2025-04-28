@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 import { shadcnPlugin } from "./src/lib/shadcn-plugin";
 
@@ -54,6 +55,8 @@ const config = {
           gold: "#FDB827",     // Marvel Gold
           darkred: "#800000",  // Dark Red for backgrounds
           black: "#000000",    // Pure Black
+          blue: "#007BFF",     // Electric Blue (Added this)
+          captain: "#1976D2",  // Captain America Blue
         },
         orange: {
           DEFAULT: "#F97316",
