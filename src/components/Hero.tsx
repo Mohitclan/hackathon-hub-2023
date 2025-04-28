@@ -1,6 +1,6 @@
 
 import React, { useEffect, useState } from 'react';
-import { ArrowDown, Shield, Star } from 'lucide-react';
+import { ArrowDown, Shield, Star, Calendar, Clock, MapPin } from 'lucide-react';
 import Transition from './Transition';
 
 const Hero = () => {
@@ -8,86 +8,108 @@ const Hero = () => {
 
   useEffect(() => {
     setLoaded(true);
+    
+    // Add cinematic parallax effect
+    const handleMouseMove = (e) => {
+      const hero = document.getElementById('hero-section');
+      if (hero) {
+        const x = e.clientX / window.innerWidth - 0.5;
+        const y = e.clientY / window.innerHeight - 0.5;
+        
+        hero.style.transform = `perspective(1000px) rotateY(${x * 3}deg) rotateX(${-y * 3}deg)`;
+      }
+    };
+    
+    window.addEventListener('mousemove', handleMouseMove);
+    
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+    };
   }, []);
 
   return (
     <section 
-      id="hero" 
-      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
+      id="hero-section" 
+      className="relative min-h-screen flex items-center justify-center overflow-hidden md:pl-16"
     >
-      {/* Background effects */}
-      <div className="absolute inset-0 z-0 bg-gradient-to-b from-marvel-blue/20 to-marvel-navy tech-pattern"></div>
+      {/* Background imagery */}
+      <div className="absolute inset-0 z-0">
+        <img 
+          src="/lovable-uploads/a9837f4b-a011-42b9-95c5-4b364d20b8e5.png" 
+          alt="Marvel Heroes" 
+          className="absolute inset-0 w-full h-full object-cover opacity-20"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/90 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black to-transparent"></div>
+      </div>
+      
+      {/* Glowing effects */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <div className="absolute w-[600px] h-[600px] rounded-full bg-marvel-blue/10 blur-[100px] -top-40 -left-40" />
         <div className="absolute w-[600px] h-[600px] rounded-full bg-marvel-red/5 blur-[100px] -bottom-40 -right-40" />
       </div>
       
-      {/* Animated particles - subtle tech feel */}
-      <div className="absolute inset-0 z-0">
-        {[...Array(20)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute w-1 h-1 bg-marvel-cyan rounded-full animate-pulse-slow"
-            style={{
-              top: `${Math.random() * 100}%`,
-              left: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 3}s`,
-              opacity: 0.6
-            }}
-          />
-        ))}
-      </div>
-      
+      {/* Main content */}
       <div className="container mx-auto px-6 relative z-10 py-12 md:py-20">
-        <div className="flex flex-col md:flex-row items-center">
+        <div className="flex flex-col md:flex-row items-center gap-8">
           <div className="w-full md:w-1/2 md:pr-8">
+            {/* Event tag */}
             <Transition animation="fade-in-up" delay={100}>
               <div className="flex items-center gap-2 mb-6">
                 <Shield className="h-5 w-5 text-marvel-red" />
-                <span className="px-3 py-1 rounded-full text-sm font-medium bg-marvel-navy/50 text-marvel-cyan border border-marvel-grey/30 inline-block">
-                  September 19, 2025
-                </span>
+                <div className="px-3 py-1 rounded-full text-sm font-medium bg-marvel-navy/50 text-marvel-cyan border border-marvel-grey/30 flex items-center gap-2">
+                  <Calendar className="w-4 h-4" />
+                  <span>September 19, 2025</span>
+                </div>
               </div>
             </Transition>
             
+            {/* Heading */}
             <Transition animation="fade-in-up" delay={300}>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-white">
-                Join the Ultimate <span className="gradient-text">HACKरण</span> Challenge!
+              <h1 className="text-4xl md:text-7xl font-bold leading-tight mb-6 text-white">
+                <span className="block mb-2 text-marvel-red font-orbitron">HACKरण</span>
+                <span className="block text-white text-5xl md:text-6xl">ASSEMBLE</span>
               </h1>
             </Transition>
             
+            {/* Description */}
             <Transition animation="fade-in-up" delay={500}>
               <p className="text-lg text-gray-300 mb-8 max-w-lg">
-                Collaborate with innovators, build game-changing solutions, and win exciting prizes in this premier coding event organized by GEEK ROOM at JIMSEMTC.
+                Join India's most ambitious student hackathon where innovation meets technology. Build revolutionary solutions and win exciting prizes.
               </p>
             </Transition>
             
+            {/* Call to action */}
             <Transition animation="fade-in-up" delay={700}>
               <div className="flex flex-col sm:flex-row gap-4">
-                <a href="#register" className="button-danger flex items-center justify-center gap-2">
+                <a href="#register" className="bg-marvel-red text-white py-3 px-8 rounded hover:bg-marvel-red/90 transition-all duration-300 flex items-center justify-center gap-2 transform hover:scale-105 shadow-glow-strong">
                   Register Now
                   <Star className="w-4 h-4 animate-pulse-slow" />
                 </a>
-                <a href="#about" className="button-outline">
+                <a href="#about" className="border border-marvel-cyan text-marvel-cyan py-3 px-8 rounded hover:bg-marvel-cyan/10 transition-all duration-300 flex items-center justify-center">
                   Learn More
                 </a>
               </div>
             </Transition>
 
+            {/* Event details */}
             <Transition animation="fade-in-up" delay={900}>
               <div className="mt-8 glass p-4 rounded-lg border border-marvel-grey/30">
-                <div className="flex flex-col md:flex-row justify-between gap-4">
+                <div className="grid grid-cols-3 gap-4">
                   <div className="text-center">
-                    <p className="text-marvel-cyan font-bold">Prize Pool</p>
-                    <p className="text-white text-sm">₹30,000+</p>
-                  </div>
-                  <div className="text-center">
+                    <Clock className="w-5 h-5 text-marvel-cyan mx-auto mb-1" />
                     <p className="text-marvel-cyan font-bold">Duration</p>
                     <p className="text-white text-sm">30 Hours</p>
                   </div>
                   <div className="text-center">
+                    <MapPin className="w-5 h-5 text-marvel-cyan mx-auto mb-1" />
                     <p className="text-marvel-cyan font-bold">Format</p>
                     <p className="text-white text-sm">Offline</p>
+                  </div>
+                  <div className="text-center">
+                    <Shield className="w-5 h-5 text-marvel-cyan mx-auto mb-1" />
+                    <p className="text-marvel-cyan font-bold">Prize Pool</p>
+                    <p className="text-white text-sm">₹30,000+</p>
                   </div>
                 </div>
               </div>
@@ -97,34 +119,36 @@ const Hero = () => {
           <div className="w-full md:w-1/2 mt-12 md:mt-0">
             <Transition animation="fade-in" delay={500} once={true}>
               <div className="relative">
-                <div className="absolute inset-0 bg-marvel-blue/20 backdrop-blur-sm rounded-2xl transform rotate-3 border border-marvel-cyan/30"></div>
-                <img 
-                  src="/lovable-uploads/8469c9e0-17e4-47a8-89b2-09a55d98d357.png" 
-                  alt="Hackathon event with participants" 
-                  className={`rounded-2xl shadow-glow object-cover w-full transition-all duration-1000 ${
-                    loaded ? 'opacity-100' : 'opacity-0 blur-lg'
-                  }`}
-                  style={{ 
-                    transformStyle: 'preserve-3d',
-                    transform: 'perspective(1000px) rotateY(-5deg) rotateX(3deg)',
-                    boxShadow: '0 20px 40px rgba(0, 123, 255, 0.3)'
-                  }}
-                />
-                {/* Tech circuit overlay */}
-                <div 
-                  className="absolute inset-0 rounded-2xl opacity-20 pointer-events-none"
-                  style={{
-                    backgroundImage: `
-                      repeating-linear-gradient(0deg, transparent, transparent 10px, rgba(0, 207, 255, 0.2) 10px, rgba(0, 207, 255, 0.2) 11px),
-                      repeating-linear-gradient(90deg, transparent, transparent 10px, rgba(0, 207, 255, 0.2) 10px, rgba(0, 207, 255, 0.2) 11px)
-                    `
-                  }}
-                ></div>
+                {/* Marvel-style frame */}
+                <div className="absolute inset-0 border-[3px] border-marvel-red rounded-lg transform -rotate-1"></div>
+                <div className="absolute inset-0 border-[3px] border-marvel-blue rounded-lg transform rotate-2"></div>
+                
+                {/* Hero image */}
+                <div className="relative z-10 overflow-hidden rounded-lg shadow-glow-strong">
+                  <img 
+                    src="/lovable-uploads/8469c9e0-17e4-47a8-89b2-09a55d98d357.png" 
+                    alt="Hackathon event with participants" 
+                    className={`rounded-lg object-cover w-full transition-all duration-1000 ${
+                      loaded ? 'opacity-100' : 'opacity-0 blur-lg'
+                    }`}
+                  />
+                  
+                  {/* Overlay with tech pattern */}
+                  <div 
+                    className="absolute inset-0 bg-gradient-to-t from-marvel-navy/80 to-transparent opacity-70"
+                  ></div>
+                </div>
+                
+                {/* Event tag */}
+                <div className="absolute -bottom-5 -right-5 bg-marvel-red text-white py-2 px-4 rounded font-orbitron shadow-glow z-20 transform rotate-3">
+                  JIMSEMTC
+                </div>
               </div>
             </Transition>
           </div>
         </div>
         
+        {/* Scroll indicator */}
         <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-float">
           <a 
             href="#about" 

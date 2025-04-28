@@ -18,8 +18,14 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="overflow-x-hidden bg-gradient-to-b from-marvel-navy to-marvel-navy/90">
-      <div className="tech-pattern fixed inset-0 z-0 pointer-events-none opacity-20"></div>
+    <div className="overflow-x-hidden bg-gradient-to-b from-black to-marvel-navy/95">
+      {/* Background overlay with grid pattern */}
+      <div className="fixed inset-0 z-0 pointer-events-none opacity-10">
+        <div className="absolute inset-0 tech-pattern"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-transparent to-black/40"></div>
+      </div>
+      
+      {/* Content */}
       <Navbar />
       <Hero />
       <About />
@@ -30,6 +36,13 @@ const Index = () => {
       <FAQ />
       <Registration />
       <Footer />
+      
+      {/* Marvel-style corner emblem */}
+      <div className="fixed top-0 left-0 w-16 h-16 pointer-events-none">
+        <div className="absolute top-0 left-0 w-full h-full bg-marvel-red"></div>
+        <div className="absolute top-0 left-0 w-full h-full transform rotate-45 origin-top-left bg-marvel-red"></div>
+        <div className="absolute top-[14px] left-[14px] text-white font-orbitron text-xs font-bold">HACK</div>
+      </div>
     </div>
   );
 };

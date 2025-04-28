@@ -41,7 +41,7 @@
 
 @layer base {
   * {
-    @apply border-border;
+    @apply border-border selection:bg-marvel-red/20 selection:text-white;
   }
 
   html, body {
@@ -122,15 +122,43 @@
     background: linear-gradient(135deg, #D32F2F 0%, #1976D2 100%);
   }
   
+  /* Marvel cinematic lens flare */
+  .lens-flare {
+    background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.8) 0%, transparent 60%);
+    mix-blend-mode: overlay;
+    opacity: 0.5;
+    pointer-events: none;
+  }
+  
   /* Avengers-style tech pattern */
   .tech-pattern {
-    background-image: radial-gradient(circle at 50% 50%, rgba(0, 207, 255, 0.1) 0%, transparent 80%),
-                      linear-gradient(45deg, rgba(0, 123, 255, 0.05) 25%, transparent 25%),
-                      linear-gradient(135deg, rgba(0, 123, 255, 0.05) 25%, transparent 25%),
-                      linear-gradient(45deg, transparent 75%, rgba(0, 123, 255, 0.05) 75%),
-                      linear-gradient(135deg, transparent 75%, rgba(0, 123, 255, 0.05) 75%);
-    background-size: 100% 100%, 20px 20px, 20px 20px, 20px 20px, 20px 20px;
-    background-position: 0 0, 0 0, 10px 10px, 0 0, 10px 10px;
+    background-image: 
+      radial-gradient(circle at 50% 50%, rgba(0, 207, 255, 0.1) 0%, transparent 80%),
+      linear-gradient(45deg, rgba(0, 123, 255, 0.05) 25%, transparent 25%),
+      linear-gradient(135deg, rgba(0, 123, 255, 0.05) 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, rgba(0, 123, 255, 0.05) 75%),
+      linear-gradient(135deg, transparent 75%, rgba(0, 123, 255, 0.05) 75%),
+      repeating-linear-gradient(90deg, rgba(211, 47, 47, 0.03) 0, rgba(211, 47, 47, 0.03) 1px, transparent 1px, transparent 20px),
+      repeating-linear-gradient(180deg, rgba(211, 47, 47, 0.03) 0, rgba(211, 47, 47, 0.03) 1px, transparent 1px, transparent 20px);
+    background-size: 100% 100%, 20px 20px, 20px 20px, 20px 20px, 20px 20px, 100% 100%, 100% 100%;
+    background-position: 0 0, 0 0, 10px 10px, 0 0, 10px 10px, 0 0, 0 0;
+  }
+  
+  /* Marvel-style angled divider */
+  .angled-divider {
+    position: relative;
+    padding-bottom: 5rem;
+  }
+  
+  .angled-divider::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5rem;
+    background: currentColor;
+    clip-path: polygon(0 0, 100% 100%, 100% 100%, 0% 100%);
   }
 }
 
@@ -156,11 +184,15 @@
   }
 
   .section-heading {
-    @apply text-3xl md:text-4xl font-bold text-center mb-12 text-white font-orbitron;
+    @apply text-3xl md:text-4xl font-bold text-center mb-6 text-white font-orbitron relative;
+  }
+  
+  .section-heading::after {
+    @apply content-[''] absolute bottom-[-10px] left-1/2 -translate-x-1/2 h-1 w-24 bg-marvel-red;
   }
 
   .section-subheading {
-    @apply text-lg text-gray-300 max-w-2xl mx-auto text-center mb-16;
+    @apply text-lg text-gray-300 max-w-2xl mx-auto text-center mb-16 mt-8;
   }
 
   .marvel-card {
@@ -177,6 +209,19 @@
 
   .marvel-highlight:hover::after {
     @apply scale-x-100 origin-bottom-left;
+  }
+  
+  /* Movie poster style card */
+  .poster-card {
+    @apply relative overflow-hidden rounded-lg shadow-lg;
+  }
+  
+  .poster-card::before {
+    @apply content-[''] absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80 z-10;
+  }
+  
+  .poster-card-content {
+    @apply absolute bottom-0 left-0 w-full p-4 z-20;
   }
 }
 
@@ -218,12 +263,12 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(0, 207, 255, 0.6);
+  background: rgba(211, 47, 47, 0.6);
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(0, 207, 255, 0.8);
+  background: rgba(211, 47, 47, 0.8);
 }
 
 /* Smooth scroll behavior */
@@ -231,3 +276,8 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Marvel-style divider */
+.marvel-divider {
+  height: 4px;
+  background: linear-gradient(to right, transparent, #D32F2F, transparent);
+}
