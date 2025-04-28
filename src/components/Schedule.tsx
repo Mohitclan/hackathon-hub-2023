@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { CalendarDays, Clock, MapPin } from 'lucide-react';
 import Transition from './Transition';
@@ -146,10 +145,12 @@ const Schedule = () => {
   ];
 
   return (
-    <section id="schedule" className="section-padding bg-charcoal-dark">
-      <div className="container mx-auto px-6">
+    <section id="schedule" className="section-padding bg-gradient-to-b from-marvel-darkred to-marvel-black relative">
+      <div className="absolute inset-0 opacity-10 tech-pattern pointer-events-none"></div>
+      
+      <div className="container mx-auto px-6 relative">
         <Transition animation="fade-in-up">
-          <h2 className="section-heading">Event Schedule</h2>
+          <h2 className="section-heading text-marvel-gold">Event Schedule</h2>
         </Transition>
         
         <Transition animation="fade-in-up" delay={200}>

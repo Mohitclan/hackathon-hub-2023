@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Github, Linkedin, Twitter } from 'lucide-react';
 import { MENTORS } from '@/assets';
@@ -6,10 +5,12 @@ import Transition from './Transition';
 
 const Mentors = () => {
   return (
-    <section id="mentors" className="section-padding bg-charcoal">
-      <div className="container mx-auto px-6">
+    <section id="mentors" className="section-padding bg-gradient-to-b from-marvel-black to-marvel-darkred relative">
+      <div className="absolute inset-0 opacity-10 tech-pattern pointer-events-none"></div>
+      
+      <div className="container mx-auto px-6 relative">
         <Transition animation="fade-in-up">
-          <h2 className="section-heading">Meet Our Mentors</h2>
+          <h2 className="section-heading text-marvel-gold">Meet Our Mentors</h2>
         </Transition>
         
         <Transition animation="fade-in-up" delay={200}>
@@ -26,7 +27,7 @@ const Mentors = () => {
               animation="fade-in-up" 
               delay={300 + index * 100}
             >
-              <div className="bg-charcoal-light rounded-xl border border-gray-700 smooth-shadow overflow-hidden hover-scale h-full">
+              <div className="bg-black/40 backdrop-blur-sm rounded-xl border border-marvel-red/20 hover:border-marvel-gold/50 transition-all duration-300 shadow-glow overflow-hidden h-full">
                 <div className="relative h-64 sm:h-56 md:h-64 overflow-hidden">
                   <img 
                     src={mentor.image} 

@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 import { shadcnPlugin } from "./src/lib/shadcn-plugin";
 
@@ -46,45 +45,16 @@ const config = {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
-        primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
-        },
-        secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
-        },
-        destructive: {
-          DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))",
-        },
-        muted: {
-          DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))",
-        },
-        accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
-        },
-        popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))",
-        },
-        card: {
-          DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--card-foreground))",
-        },
-        // Marvel theme colors
         marvel: {
-          blue: "#007BFF",     // Electric Blue
+          red: "#D32F2F",     // Crimson Red
           navy: "#0B1C3C",     // Dark Navy
           white: "#FFFFFF",    // White
           cyan: "#00CFFF",     // Light Cyan
           grey: "#404854",     // Steel Grey
-          red: "#D32F2F",      // Crimson Red
-          captain: "#1976D2",  // Captain America Blue
+          gold: "#FDB827",     // Marvel Gold
+          darkred: "#800000",  // Dark Red for backgrounds
+          black: "#000000",    // Pure Black
         },
-        // Original colors kept for compatibility
         orange: {
           DEFAULT: "#F97316",
           light: "#FB923C",

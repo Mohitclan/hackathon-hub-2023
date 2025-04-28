@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Code, Users, Trophy, Lightbulb, Server, ShieldCheck, Cpu, Heart } from 'lucide-react';
 import Transition from './Transition';
@@ -48,14 +47,16 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="section-padding bg-charcoal-dark">
-      <div className="container mx-auto px-6">
+    <section id="about" className="section-padding bg-gradient-to-b from-marvel-darkred to-marvel-black relative">
+      <div className="absolute inset-0 opacity-10 tech-pattern pointer-events-none"></div>
+      
+      <div className="container mx-auto px-6 relative">
         <Transition animation="fade-in-up">
-          <h2 className="section-heading text-white">What is HACKरण?</h2>
+          <h2 className="section-heading text-marvel-gold">What is HACKरण?</h2>
         </Transition>
         
         <Transition animation="fade-in-up" delay={200}>
-          <p className="section-subheading text-gray-300">
+          <p className="section-subheading text-marvel-white/80">
             HACKरण is a 30-hour coding marathon where creativity meets technology.
             Organized by GEEK ROOM at JIMS Engineering Management Technical Campus,
             this event encourages innovation, problem-solving, and collaboration by addressing 
@@ -65,7 +66,7 @@ const About = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
           <Transition animation="fade-in-up" delay={300} className="col-span-full">
-            <h3 className="text-2xl font-semibold mb-6 text-orange text-center">Hackathon Themes</h3>
+            <h3 className="text-2xl font-semibold mb-6 text-marvel-gold text-center font-orbitron">Hackathon Themes</h3>
           </Transition>
           
           {features.map((feature, index) => (
@@ -74,12 +75,12 @@ const About = () => {
               animation="fade-in-up" 
               delay={400 + index * 100}
             >
-              <div className="bg-charcoal p-8 rounded-xl border border-orange/10 smooth-shadow hover-scale h-full">
-                <div className="w-12 h-12 flex items-center justify-center rounded-lg bg-orange/10 mb-6">
+              <div className="bg-black/40 backdrop-blur-sm p-8 rounded-xl border border-marvel-red/20 hover:border-marvel-gold/50 transition-all duration-300 shadow-glow h-full">
+                <div className="w-12 h-12 flex items-center justify-center rounded-lg bg-marvel-red/10 mb-6">
                   {feature.icon}
                 </div>
-                <h3 className="text-xl font-semibold mb-3 text-white">{feature.title}</h3>
-                <p className="text-gray-300">{feature.description}</p>
+                <h3 className="text-xl font-semibold mb-3 text-marvel-gold font-orbitron">{feature.title}</h3>
+                <p className="text-marvel-white/70">{feature.description}</p>
               </div>
             </Transition>
           ))}
