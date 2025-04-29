@@ -48,7 +48,7 @@ const Navbar = () => {
         )}>
           {/* Logo */}
           <a href="#" className="mb-12">
-            <Shield className="w-8 h-8 text-marvel-red" />
+            <Shield className="w-8 h-8 text-marvel-blue" />
           </a>
           
           {/* Nav items */}
@@ -57,7 +57,7 @@ const Navbar = () => {
               <a 
                 key={item.name}
                 href={item.href}
-                className="text-white/70 hover:text-marvel-red transition-colors duration-300 group relative"
+                className="text-white/70 hover:text-marvel-blue transition-colors duration-300 group relative"
                 title={item.name}
               >
                 {/* Icon */}
@@ -76,7 +76,7 @@ const Navbar = () => {
           {/* Register button at bottom */}
           <a 
             href="#register" 
-            className="mt-auto bg-marvel-red hover:bg-marvel-red/90 text-white p-2 rounded-full transition-transform hover:scale-110"
+            className="mt-auto bg-marvel-blue hover:bg-marvel-blue/90 text-white p-2 rounded-full transition-transform hover:scale-110"
             title="Register Now"
           >
             <FileText className="w-6 h-6" />
@@ -95,8 +95,8 @@ const Navbar = () => {
       >
         <div className="container mx-auto px-6 flex items-center justify-between">
           <a href="#" className="text-2xl font-bold flex items-center space-x-2">
-            <Shield className="w-6 h-6 text-marvel-red animate-pulse-slow" />
-            <span className="font-orbitron gradient-text">HACKरण</span>
+            <Shield className="w-6 h-6 text-marvel-blue animate-pulse-slow" />
+            <span className="font-orbitron gradient-text">HackQuanta</span>
           </a>
 
           {/* Mobile Menu Button */}

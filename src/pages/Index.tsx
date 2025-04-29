@@ -16,7 +16,7 @@ const Index = () => {
 
   useEffect(() => {
     // Update page title
-    document.title = 'HACKरण 2025 - Join the Ultimate Hackathon Challenge';
+    document.title = 'HackQuanta 2025 - Join the Ultimate Hackathon Challenge';
     
     // Add subtle parallax effect based on mouse position
     const handleMouseMove = (e) => {
@@ -57,29 +57,21 @@ const Index = () => {
         <Footer />
       </div>
       
-      {/* Marvel-style corner emblem with 3D effect */}
+      {/* HackQuanta logo in the corner with 3D effect */}
       <div 
-        className="fixed top-0 left-0 w-16 h-16 pointer-events-none"
+        className="fixed top-0 left-0 w-28 h-28 pointer-events-none"
         style={{ 
-          transform: `perspective(1000px) rotateY(${mousePosition.x * 15}deg) rotateX(${mousePosition.y * -15}deg)`,
+          transform: `perspective(1000px) rotateY(${mousePosition.x * 5}deg) rotateX(${mousePosition.y * -5}deg)`,
           transformStyle: 'preserve-3d',
           transition: 'transform 0.2s ease-out'
         }}
       >
-        <div className="absolute top-0 left-0 w-full h-full bg-marvel-red"></div>
-        <div 
-          className="absolute top-0 left-0 w-full h-full transform rotate-45 origin-top-left bg-marvel-red"
-          style={{ filter: 'brightness(1.2)' }}
-        ></div>
-        <div 
-          className="absolute top-[14px] left-[14px] text-white font-orbitron text-xs font-bold"
-          style={{ 
-            textShadow: '0 1px 3px rgba(0,0,0,0.4)',
-            transform: 'translateZ(5px)'
-          }}
-        >
-          HACK
-        </div>
+        <img 
+          src="/lovable-uploads/367d1ef1-5a54-49a3-8811-952d58a663cd.png" 
+          alt="HackQuanta Logo" 
+          className="w-full h-full object-contain"
+          style={{ transform: 'translateZ(5px)' }}
+        />
       </div>
     </div>
   );

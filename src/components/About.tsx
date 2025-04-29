@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Code, Users, Trophy, Lightbulb, Server, ShieldCheck, Cpu, Heart } from 'lucide-react';
 import Transition from './Transition';
@@ -52,12 +53,12 @@ const About = () => {
       
       <div className="container mx-auto px-6 relative">
         <Transition animation="fade-in-up">
-          <h2 className="section-heading text-marvel-gold">What is HACKरण?</h2>
+          <h2 className="section-heading text-marvel-gold">What is HackQuanta?</h2>
         </Transition>
         
         <Transition animation="fade-in-up" delay={200}>
           <p className="section-subheading text-marvel-white/80">
-            HACKरण is a 30-hour coding marathon where creativity meets technology.
+            HackQuanta is a 30-hour coding marathon where creativity meets technology.
             Organized by GEEK ROOM at JIMS Engineering Management Technical Campus,
             this event encourages innovation, problem-solving, and collaboration by addressing 
             real-world challenges in an interactive and competitive environment.
@@ -112,7 +113,7 @@ const About = () => {
         <Transition animation="fade-in-up" delay={1200}>
           <div className="bg-gradient-to-r from-charcoal to-charcoal-light p-8 md:p-12 rounded-2xl smooth-shadow mt-8 border border-orange/10">
             <blockquote className="text-lg md:text-xl text-gray-300 italic text-center">
-              "The goal of HACKरण 2025 is to establish JIMS Engineering Management Technical Campus as a leading institution fostering technical creativity and excellence."
+              "The goal of HackQuanta 2025 is to establish JIMS Engineering Management Technical Campus as a leading institution fostering technical creativity and excellence."
             </blockquote>
             <div className="mt-6 text-center">
               <p className="font-semibold text-orange">GEEK ROOM</p>
