@@ -57,7 +57,7 @@ const Index = () => {
         <Footer />
       </div>
       
-      {/* Marvel-style corner emblem with reduced 3D effect */}
+      {/* Marvel-style corner emblem with reduced 3D effect - updated with HackQuanta poster */}
       <div 
         className="fixed top-0 left-0 w-16 h-16 pointer-events-none"
         style={{ 
@@ -65,17 +65,11 @@ const Index = () => {
           transition: 'transform 0.2s ease-out'
         }}
       >
-        <div className="absolute top-0 left-0 w-full h-full bg-marvel-red"></div>
-        <div 
-          className="absolute top-0 left-0 w-full h-full transform rotate-45 origin-top-left bg-marvel-red"
-          style={{ filter: 'brightness(1.2)' }}
-        ></div>
-        <div 
-          className="absolute top-[14px] left-[14px] text-white font-orbitron text-xs font-bold"
-          style={{ textShadow: '0 1px 3px rgba(0,0,0,0.4)' }}
-        >
-          HACK
-        </div>
+        <img 
+          src="/lovable-uploads/a9837f4b-a011-42b9-95c5-4b364d20b8e5.png"
+          alt="HackQuanta Emblem"
+          className="absolute top-0 left-0 w-full h-full object-cover"
+        />
       </div>
     </div>
   );

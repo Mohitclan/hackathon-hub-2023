@@ -27,7 +27,7 @@ const Sponsors = () => {
     return {
       transform: `perspective(1000px) translateZ(${baseZ}px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`,
       transition: 'transform 0.2s ease-out',
-      transformStyle: 'preserve-3d'
+      transformStyle: 'preserve-3d' as 'preserve-3d'
     };
   };
 
@@ -37,7 +37,7 @@ const Sponsors = () => {
       
       <div 
         className="container mx-auto px-6 relative" 
-        style={{ perspective: '1200px', transformStyle: 'preserve-3d' }}
+        style={{ perspective: '1200px' } as React.CSSProperties}
       >
         <Transition animation="fade-in-up">
           <h2 
@@ -56,14 +56,13 @@ const Sponsors = () => {
         
         <div 
           className="mt-12"
-          style={{ transformStyle: 'preserve-3d' }}
+          style={{ transformStyle: 'preserve-3d' as 'preserve-3d' }}
         >
           <h3 
             className="text-xl font-medium text-center mb-10 text-marvel-gold font-orbitron"
             style={{ 
               textShadow: '0 2px 8px rgba(253, 184, 39, 0.2)',
               transform: `translateZ(15px) translateY(${mousePosition.y * -5}px)`,
-              transformStyle: 'preserve-3d'
             }}
           >
             Platinum Sponsors
@@ -98,7 +97,6 @@ const Sponsors = () => {
             style={{ 
               textShadow: '0 2px 8px rgba(253, 184, 39, 0.2)',
               transform: `translateZ(15px) translateY(${mousePosition.y * -5}px)`,
-              transformStyle: 'preserve-3d'
             }}
           >
             Gold Sponsors
@@ -133,7 +131,7 @@ const Sponsors = () => {
             style={{ 
               transform: `perspective(1000px) rotateX(${mousePosition.y * -5}deg) rotateY(${mousePosition.x * 5}deg) translateZ(20px)`,
               boxShadow: '0 10px 30px -10px rgba(211, 47, 47, 0.3)',
-              transformStyle: 'preserve-3d',
+              transformStyle: 'preserve-3d' as 'preserve-3d',
               transition: 'transform 0.3s ease-out, box-shadow 0.3s ease-out, border-color 0.3s ease-out'
             }}
           >
