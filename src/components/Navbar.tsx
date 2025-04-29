@@ -44,7 +44,7 @@ const Navbar = () => {
       <div className="fixed left-0 top-0 h-full z-50 hidden md:block">
         <div className={cn(
           "h-full w-16 bg-black flex flex-col items-center py-12 transition-all duration-300",
-          isScrolled ? "shadow-glow" : ""
+          isScrolled ? "shadow-md" : ""
         )}>
           {/* Logo */}
           <a href="#" className="mb-12">
@@ -89,7 +89,7 @@ const Navbar = () => {
         className={cn(
           'fixed top-0 left-0 w-full z-50 transition-all duration-500 md:hidden',
           isScrolled
-            ? 'py-3 bg-black shadow-glow'
+            ? 'py-3 bg-black shadow-md'
             : 'py-5 bg-transparent'
         )}
       >
