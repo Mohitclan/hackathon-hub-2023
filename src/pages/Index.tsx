@@ -16,9 +16,9 @@ const Index = () => {
 
   useEffect(() => {
     // Update page title
-    document.title = 'HACKरण 2025 - Join the Ultimate Hackathon Challenge';
+    document.title = 'HackQuanta 2025 - Data. Dystopia. Dominance.';
     
-    // Add subtle parallax effect based on mouse position
+    // Add subtle parallax effect based on mouse position (reduced effect)
     const handleMouseMove = (e) => {
       const x = e.clientX / window.innerWidth - 0.5;
       const y = e.clientY / window.innerHeight - 0.5;
@@ -32,19 +32,19 @@ const Index = () => {
   return (
     <div 
       className="overflow-x-hidden bg-gradient-to-b from-black to-marvel-navy/95"
-      style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}
+      style={{ perspective: '1000px' }}
     >
-      {/* Background overlay with parallax grid pattern */}
+      {/* Background overlay with reduced parallax grid pattern */}
       <div 
-        className="fixed inset-0 z-0 pointer-events-none opacity-10"
-        style={{ transform: `translateZ(-20px) translateX(${mousePosition.x * -20}px) translateY(${mousePosition.y * -20}px) scale(1.1)` }}
+        className="fixed inset-0 z-0 pointer-events-none opacity-5"
+        style={{ transform: `translateX(${mousePosition.x * -10}px) translateY(${mousePosition.y * -10}px)` }}
       >
         <div className="absolute inset-0 tech-pattern"></div>
         <div className="absolute inset-0 bg-gradient-to-t from-transparent to-black/40"></div>
       </div>
       
-      {/* Content with 3D depth */}
-      <div style={{ transformStyle: 'preserve-3d' }}>
+      {/* Content with reduced 3D depth */}
+      <div>
         <Navbar />
         <Hero />
         <About />
@@ -57,12 +57,11 @@ const Index = () => {
         <Footer />
       </div>
       
-      {/* Marvel-style corner emblem with 3D effect */}
+      {/* Marvel-style corner emblem with reduced 3D effect */}
       <div 
         className="fixed top-0 left-0 w-16 h-16 pointer-events-none"
         style={{ 
-          transform: `perspective(1000px) rotateY(${mousePosition.x * 15}deg) rotateX(${mousePosition.y * -15}deg)`,
-          transformStyle: 'preserve-3d',
+          transform: `rotateY(${mousePosition.x * 5}deg) rotateX(${mousePosition.y * -5}deg)`,
           transition: 'transform 0.2s ease-out'
         }}
       >
@@ -73,10 +72,7 @@ const Index = () => {
         ></div>
         <div 
           className="absolute top-[14px] left-[14px] text-white font-orbitron text-xs font-bold"
-          style={{ 
-            textShadow: '0 1px 3px rgba(0,0,0,0.4)',
-            transform: 'translateZ(5px)'
-          }}
+          style={{ textShadow: '0 1px 3px rgba(0,0,0,0.4)' }}
         >
           HACK
         </div>
