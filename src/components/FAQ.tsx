@@ -56,7 +56,7 @@ const FAQ = () => {
       <div className="container mx-auto px-6">
         <Transition animation="fade-in-up">
           <h2 className="section-heading text-marvel-red">
-            <span className="font-marvel">ASK J.A.R.V.I.S.</span>
+            <span className="font-marvel">HACKQUANTA FAQ</span>
           </h2>
         </Transition>
         
@@ -110,7 +110,7 @@ const FAQ = () => {
           <div className="bg-charcoal-light p-8 md:p-12 rounded-2xl border border-marvel-red/20 smooth-shadow text-center max-w-3xl mx-auto">
             <h3 className="text-2xl font-semibold mb-4 text-white font-marvel">NEED ADDITIONAL INTEL?</h3>
             <p className="text-gray-300 mb-8">
-              J.A.R.V.I.S. couldn't find what you're looking for? Contact our human support team directly.
+              Can't find what you're looking for? Contact our support team directly.
             </p>
             <a href="#contact" className="bg-marvel-red text-white py-3 px-8 rounded hover:bg-marvel-red/90 transition-all duration-300 flex items-center justify-center gap-2 hover:shadow-marvel inline-block">
               Contact Us

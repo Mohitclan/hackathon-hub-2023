@@ -14,11 +14,11 @@ import Footer from '../components/Footer';
 const Index = () => {
   useEffect(() => {
     // Update page title
-    document.title = 'Avengers Assemble: Code for the Multiverse - 2025';
+    document.title = 'HackQuanta: Code for the Multiverse - 2025';
     
-    // Add Google font for Marvel style
+    // Add Google font for Marvel style - replacing with Bebas Neue for sharper text
     const link = document.createElement('link');
-    link.href = 'https://fonts.googleapis.com/css2?family=Anton&display=swap';
+    link.href = 'https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;500;600;700&display=swap';
     link.rel = 'stylesheet';
     document.head.appendChild(link);
     

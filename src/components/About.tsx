@@ -62,7 +62,7 @@ const About = () => {
       <div className="container mx-auto px-6 relative">
         <Transition animation="fade-in-up">
           <h2 className="section-heading text-marvel-red">
-            <span className="font-marvel">ASSEMBLE YOUR CODE</span>
+            <span className="font-marvel">CODE FOR THE MULTIVERSE</span>
           </h2>
         </Transition>
         
@@ -126,7 +126,7 @@ const About = () => {
         <Transition animation="fade-in-up" delay={1200}>
           <div className="bg-gradient-to-r from-charcoal to-charcoal-light p-8 md:p-12 rounded-2xl smooth-shadow mt-8 border border-marvel-red/10">
             <blockquote className="text-lg md:text-xl text-gray-300 italic text-center">
-              "The Avengers initiative was formed to bring together remarkable people. This hackathon exists to do the same with remarkable coders."
+              "HackQuanta was formed to bring together remarkable people. This hackathon exists to do the same with remarkable coders."
             </blockquote>
             <div className="mt-6 text-center">
               <p className="font-semibold text-marvel-red font-marvel">GEEK ROOM</p>

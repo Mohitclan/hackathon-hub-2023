@@ -46,7 +46,7 @@ const Hero = () => {
       {/* Background imagery with Avengers pattern */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="/lovable-uploads/a9837f4b-a011-42b9-95c5-4b364d20b8e5.png" 
+          src="/lovable-uploads/4c52062d-66ef-4618-98f0-7a9eb53e1658.png" 
           alt="Marvel Heroes" 
           className="absolute inset-0 w-full h-full object-cover opacity-20"
         />
@@ -77,7 +77,7 @@ const Hero = () => {
             {/* Heading */}
             <Transition animation="fade-in-up" delay={300}>
               <h1 className="text-4xl md:text-7xl font-bold leading-tight mb-6 text-white">
-                <span className="block mb-2 text-white font-marvel marvel-gradient">AVENGERS ASSEMBLE:</span>
+                <span className="block mb-2 text-white font-marvel marvel-gradient">HACKQUANTA:</span>
                 <span className="block text-marvel-cyan text-3xl md:text-4xl">CODE FOR THE MULTIVERSE</span>
               </h1>
             </Transition>
@@ -95,7 +95,7 @@ const Hero = () => {
             {/* Countdown timer */}
             <Transition animation="fade-in-up" delay={600}>
               <div className="mb-8">
-                <p className="text-sm text-marvel-white mb-2">HACKATHON BEGINS IN:</p>
+                <p className="text-sm text-marvel-white mb-2 font-marvel">HACKATHON BEGINS IN:</p>
                 <div className="flex justify-start space-x-4">
                   <div className="flex flex-col items-center">
                     <div className="bg-marvel-red/20 w-16 h-16 flex items-center justify-center rounded-md border border-marvel-red/30">
@@ -169,11 +169,11 @@ const Hero = () => {
                 <div className="absolute inset-0 border-[2px] border-marvel-red rounded-lg shadow-md -m-2 opacity-30"></div>
                 <div className="absolute inset-0 border-[2px] border-marvel-blue rounded-lg shadow-md m-2 opacity-10"></div>
                 
-                {/* Hero image - updated to Avengers theme */}
+                {/* Hero image - using one of the new Marvel images */}
                 <div className="relative z-10 overflow-hidden rounded-lg shadow-md">
                   <img 
-                    src="/lovable-uploads/a34081ee-992f-41f8-ac2a-cb0f992bd76d.png" 
-                    alt="Avengers Assemble Hackathon poster" 
+                    src="/lovable-uploads/21ed96bf-da1c-44b1-8d09-33755afb75cd.png" 
+                    alt="HackQuanta Hackathon poster" 
                     className={`rounded-lg object-cover w-full transition-all duration-1000 ${
                       loaded ? 'opacity-100' : 'opacity-0 blur-lg'
                     }`}

@@ -20,7 +20,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           <Transition animation="fade-in-up" delay={100} className="md:col-span-2">
             <div>
-              <h2 className="flex items-center text-2xl font-bold mb-6 text-marvel-cyan font-orbitron">
+              <h2 className="flex items-center text-2xl font-bold mb-6 text-marvel-cyan font-marvel">
                 <Shield className="h-6 w-6 mr-2 text-marvel-cyan" />
                 HackQuanta
               </h2>
@@ -63,7 +63,7 @@ const Footer = () => {
           
           <Transition animation="fade-in-up" delay={200}>
             <div>
-              <h3 className="text-lg font-semibold mb-6 text-marvel-blue font-orbitron">Quick Links</h3>
+              <h3 className="text-lg font-semibold mb-6 text-marvel-blue font-marvel">Quick Links</h3>
               <ul className="space-y-4">
                 {['About', 'Sponsors', 'Prizes', 'Mentors', 'Schedule', 'FAQ', 'Register'].map((item) => (
                   <li key={item}>
@@ -82,11 +82,11 @@ const Footer = () => {
           
           <Transition animation="fade-in-up" delay={300}>
             <div>
-              <h3 className="text-lg font-semibold mb-6 text-marvel-blue font-orbitron">Contact Us</h3>
+              <h3 className="text-lg font-semibold mb-6 text-marvel-blue font-marvel">Contact Us</h3>
               <ul className="space-y-4">
                 <li className="flex items-start">
                   <Mail className="w-5 h-5 text-marvel-blue mr-3 mt-0.5" />
-                  <span className="text-gray-400">info@hackathonhub.com</span>
+                  <span className="text-gray-400">info@hackquanta.com</span>
                 </li>
                 <li className="flex items-start">
                   <Phone className="w-5 h-5 text-marvel-blue mr-3 mt-0.5" />
