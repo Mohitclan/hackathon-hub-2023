@@ -1,10 +1,35 @@
 
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Award, Gift, Star, Zap } from 'lucide-react';
 import { PRIZES } from '@/assets';
 import Transition from './Transition';
 
 const Prizes = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+  
+  useEffect(() => {
+    const handleScroll = () => {
+      const stones = document.querySelectorAll('.infinity-stone');
+      stones.forEach((stone, index) => {
+        const rect = stone.getBoundingClientRect();
+        const isVisible = rect.top < window.innerHeight && rect.bottom >= 0;
+        
+        if (isVisible) {
+          const scrollPosition = window.scrollY;
+          const rotateY = ((scrollPosition - rect.top) / 100) % 360;
+          const translateZ = Math.sin(scrollPosition / 500) * 20;
+          
+          // Apply 3D rotation effect
+          (stone as HTMLElement).style.transform = 
+            `perspective(1000px) rotateY(${rotateY * 0.1}deg) translateZ(${translateZ}px)`;
+        }
+      });
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const infinityStones = [
     {
       title: "Power Stone",
@@ -45,8 +70,17 @@ const Prizes = () => {
   ];
 
   return (
-    <section id="prizes" className="section-padding bg-black relative">
+    <section id="prizes" className="section-padding bg-black relative" ref={sectionRef}>
       <div className="absolute inset-0 opacity-10 tech-pattern pointer-events-none"></div>
+      
+      {/* Captain America Shield (floating in background) */}
+      <div className="captain-america-shield"></div>
+      
+      {/* Spider Web Top Right */}
+      <div className="spider-web spider-web-top-right"></div>
+      
+      {/* Spider Web Bottom Left */}
+      <div className="spider-web spider-web-bottom-left"></div>
       
       <div className="container mx-auto px-6 relative">
         <Transition animation="fade-in-up">
@@ -65,15 +99,25 @@ const Prizes = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
           {infinityStones.map((stone, index) => (
             <Transition key={index} animation="fade-in-up" delay={300 + index * 100}>
-              <div className={`rounded-xl overflow-hidden h-full flex flex-col clip-path-stone ${stone.color}`}>
+              <div 
+                className={`rounded-xl overflow-hidden h-full flex flex-col clip-path-stone infinity-stone ${stone.color} transform-gpu`}
+                style={{
+                  transition: "transform 0.6s ease-out",
+                  boxShadow: `0 10px 25px ${index === 0 ? 'rgba(147, 51, 234, 0.5)' : 
+                              index === 1 ? 'rgba(225, 29, 72, 0.5)' : 
+                              index === 2 ? 'rgba(37, 99, 235, 0.5)' : 
+                              'rgba(234, 179, 8, 0.5)'}`
+                }}
+              >
                 <div className="p-1">
                   <div className="bg-black/90 rounded-lg overflow-hidden h-full flex flex-col">
                     <div className="relative h-48 overflow-hidden">
                       <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/70 z-10"></div>
                       <img 
                         src={stone.image} 
-                        alt={stone.title} 
-                        className="w-full h-full object-cover transition-transform duration-500 ease-out hover:scale-105"
+                        alt={stone.title}
+                        className="w-full h-full object-cover transition-transform duration-500 ease-out hover:scale-110"
+                        style={{objectFit: "cover"}}
                       />
                       <div className="absolute top-4 left-4 bg-black rounded-full p-2 z-20">
                         {stone.icon}

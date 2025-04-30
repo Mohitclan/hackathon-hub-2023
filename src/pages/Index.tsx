@@ -1,5 +1,5 @@
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import About from '../components/About';
@@ -12,6 +12,9 @@ import Registration from '../components/Registration';
 import Footer from '../components/Footer';
 
 const Index = () => {
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const [showShield, setShowShield] = useState(false);
+
   useEffect(() => {
     // Update page title
     document.title = 'HackQuanta: Code for the Multiverse - 2025';
@@ -21,9 +24,27 @@ const Index = () => {
     link.href = 'https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;500;600;700&display=swap';
     link.rel = 'stylesheet';
     document.head.appendChild(link);
+
+    // Handle scroll effects
+    const handleScroll = () => {
+      setScrollPosition(window.scrollY);
+      
+      // Show shield after scrolling a bit
+      if (window.scrollY > 300) {
+        setShowShield(true);
+      } else {
+        setShowShield(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    
+    // Initial shield display check
+    handleScroll();
     
     return () => {
       document.head.removeChild(link);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
@@ -56,6 +77,37 @@ const Index = () => {
           alt="Avengers Logo" 
           className="w-full h-full object-contain"
         />
+      </div>
+
+      {/* Floating Captain America Shield */}
+      <div 
+        className={`fixed right-0 bottom-40 z-10 transition-all duration-700 ease-in-out pointer-events-none ${showShield ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full'}`}
+        style={{ 
+          transform: `translateY(${Math.sin(scrollPosition / 300) * 20}px) rotate(${scrollPosition * 0.05}deg)`,
+        }}
+      >
+        <div className="captain-america-shield-fixed w-32 h-32 md:w-40 md:h-40"></div>
+      </div>
+      
+      {/* Iron Man Repulsor Beam */}
+      <div 
+        className="fixed left-0 bottom-1/4 z-10 pointer-events-none opacity-60"
+        style={{ 
+          transform: `translateX(${Math.sin(scrollPosition / 400) * 20 - 100}px) translateY(${Math.cos(scrollPosition / 300) * 15}px)`,
+        }}
+      >
+        <div className="iron-man-repulsor"></div>
+      </div>
+      
+      {/* Floating Spider */}
+      <div 
+        className="fixed top-1/3 right-10 z-10 pointer-events-none"
+        style={{ 
+          transform: `translateY(${scrollPosition * 0.2}px)`,
+          opacity: Math.min(1, Math.max(0, (scrollPosition - 300) / 500))
+        }}
+      >
+        <div className="spider-hanging"></div>
       </div>
     </div>
   );

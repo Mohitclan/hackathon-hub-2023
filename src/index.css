@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -160,6 +159,146 @@
     background: currentColor;
     clip-path: polygon(0 0, 100% 100%, 100% 100%, 0% 100%);
   }
+  
+  /* Captain America Shield - In-Section Fixed Position */
+  .captain-america-shield {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    right: -20px;
+    top: 30%;
+    border-radius: 50%;
+    background: radial-gradient(
+      circle,
+      #E23636 0%,
+      #E23636 20%,
+      #FFFFFF 20%,
+      #FFFFFF 40%,
+      #E23636 40%,
+      #E23636 60%,
+      #1976D2 60%,
+      #1976D2 80%,
+      #FFFFFF 80%,
+      #FFFFFF 100%
+    );
+    box-shadow: 0 0 20px rgba(25, 118, 210, 0.7);
+    opacity: 0.7;
+    transform: rotate(15deg) scale(0.8);
+    animation: shield-rotate 10s linear infinite, shield-float 5s ease-in-out infinite;
+    z-index: 1;
+  }
+  
+  /* Captain America Shield - Fixed Position */
+  .captain-america-shield-fixed {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: radial-gradient(
+      circle,
+      #E23636 0%,
+      #E23636 20%,
+      #FFFFFF 20%,
+      #FFFFFF 40%,
+      #E23636 40%,
+      #E23636 60%,
+      #1976D2 60%,
+      #1976D2 80%,
+      #FFFFFF 80%,
+      #FFFFFF 100%
+    );
+    box-shadow: 0 0 30px rgba(25, 118, 210, 0.7);
+    opacity: 0.9;
+    animation: shield-pulse 3s ease-in-out infinite;
+  }
+  
+  /* Spider Webs */
+  .spider-web {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' fill='none'%3E%3Cpath d='M50 0V100M0 50H100M14.64 14.64L85.36 85.36M85.36 14.64L14.64 85.36M25 0V100M75 0V100M0 25H100M0 75H100' stroke='rgba(255,255,255,0.3)' stroke-width='0.5'/%3E%3Ccircle cx='50' cy='50' r='45' stroke='rgba(255,255,255,0.3)' stroke-width='0.5' fill='none'/%3E%3Ccircle cx='50' cy='50' r='35' stroke='rgba(255,255,255,0.3)' stroke-width='0.5' fill='none'/%3E%3Ccircle cx='50' cy='50' r='25' stroke='rgba(255,255,255,0.3)' stroke-width='0.5' fill='none'/%3E%3Ccircle cx='50' cy='50' r='15' stroke='rgba(255,255,255,0.3)' stroke-width='0.5' fill='none'/%3E%3C/svg%3E");
+    opacity: 0.5;
+    z-index: 0;
+  }
+  
+  .spider-web-top-right {
+    top: 0;
+    right: 0;
+    transform: translate(30%, -30%);
+  }
+  
+  .spider-web-bottom-left {
+    bottom: 10%;
+    left: 0;
+    transform: translate(-30%, 0%) scale(0.7);
+  }
+  
+  /* Spider Hanging Element */
+  .spider-hanging {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background-color: #000;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transform-origin: center top;
+    animation: spider-swing 5s ease-in-out infinite;
+  }
+  
+  .spider-hanging:before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    width: 2px;
+    height: 100px;
+    background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.7));
+    transform: translateX(-50%);
+  }
+  
+  .spider-hanging:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40' fill='none'%3E%3Cpath d='M20 5 L25 15 L15 15 Z' fill='%23f00'/%3E%3Ccircle cx='17' cy='18' r='2' fill='white'/%3E%3Ccircle cx='23' cy='18' r='2' fill='white'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  /* Iron Man Repulsor */
+  .iron-man-repulsor {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(247, 183, 51, 1) 0%, rgba(252, 74, 26, 0.8) 50%, rgba(247, 183, 51, 0) 70%);
+    box-shadow: 0 0 20px rgba(252, 74, 26, 0.9), 0 0 40px rgba(252, 74, 26, 0.5);
+    animation: repulsor-pulse 2s ease-in-out infinite;
+  }
+  
+  .iron-man-repulsor:after {
+    content: '';
+    position: absolute;
+    left: 30px;
+    top: 0;
+    width: 200px;
+    height: 60px;
+    background: linear-gradient(90deg, rgba(252, 74, 26, 0.8) 0%, rgba(247, 183, 51, 0) 100%);
+    filter: blur(5px);
+    transform-origin: left center;
+    animation: beam-pulse 3s ease-in-out infinite;
+  }
+  
+  /* Infinity Stone Card Transform */
+  .infinity-stone {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    transition: transform 0.6s ease-out;
+  }
 }
 
 @layer components {
@@ -227,6 +366,7 @@
   }
 }
 
+/* Animation Keyframes */
 @keyframes bounce {
   0%, 100% {
     transform: translateY(0);
@@ -269,6 +409,36 @@
   to { transform: translateY(0); opacity: 1; }
 }
 
+@keyframes shield-rotate {
+  from { transform: rotate(0deg) scale(0.8); }
+  to { transform: rotate(360deg) scale(0.8); }
+}
+
+@keyframes shield-float {
+  0%, 100% { transform: translateY(0) rotate(15deg) scale(0.8); }
+  50% { transform: translateY(-15px) rotate(15deg) scale(0.8); }
+}
+
+@keyframes shield-pulse {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 30px rgba(25, 118, 210, 0.7); }
+  50% { transform: scale(1.05); box-shadow: 0 0 40px rgba(25, 118, 210, 0.9); }
+}
+
+@keyframes spider-swing {
+  0%, 100% { transform: rotate(-10deg); }
+  50% { transform: rotate(10deg); }
+}
+
+@keyframes repulsor-pulse {
+  0%, 100% { opacity: 0.7; transform: scale(1); }
+  50% { opacity: 0.9; transform: scale(1.1); }
+}
+
+@keyframes beam-pulse {
+  0%, 100% { opacity: 0.5; transform: scaleY(1); }
+  50% { opacity: 0.8; transform: scaleY(1.2); }
+}
+
 /* Custom scroll bar */
 ::-webkit-scrollbar {
   width: 6px;
@@ -298,4 +468,3 @@ html {
   height: 4px;
   background: linear-gradient(to right, transparent, #E23636, transparent);
 }
-
