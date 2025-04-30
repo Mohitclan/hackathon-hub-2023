@@ -14,7 +14,17 @@ import Footer from '../components/Footer';
 const Index = () => {
   useEffect(() => {
     // Update page title
-    document.title = 'HackQuanta 2025 - Join the Ultimate Hackathon Challenge';
+    document.title = 'Avengers Assemble: Code for the Multiverse - 2025';
+    
+    // Add Google font for Marvel style
+    const link = document.createElement('link');
+    link.href = 'https://fonts.googleapis.com/css2?family=Anton&display=swap';
+    link.rel = 'stylesheet';
+    document.head.appendChild(link);
+    
+    return () => {
+      document.head.removeChild(link);
+    };
   }, []);
 
   return (
@@ -39,11 +49,11 @@ const Index = () => {
         <Footer />
       </div>
       
-      {/* HackQuanta logo in the corner */}
+      {/* Avengers logo in the corner */}
       <div className="fixed top-0 left-0 w-24 h-24 pointer-events-none">
         <img 
-          src="/lovable-uploads/367d1ef1-5a54-49a3-8811-952d58a663cd.png" 
-          alt="HackQuanta Logo" 
+          src="/lovable-uploads/a34081ee-992f-41f8-ac2a-cb0f992bd76d.png" 
+          alt="Avengers Logo" 
           className="w-full h-full object-contain"
         />
       </div>

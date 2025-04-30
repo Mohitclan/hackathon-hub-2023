@@ -26,6 +26,9 @@ const config = {
         "glow": "glow 2s ease-in-out infinite",
         "pulse-slow": "pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite",
         "tilt": "tilt 10s infinite linear",
+        "hero-shine": "hero-shine 2s forwards ease-in-out",
+        "fade-in": "fade-in 0.5s ease-in-out",
+        "slide-in": "slide-in 0.5s ease-in-out",
       },
       keyframes: {
         bounce: {
@@ -45,6 +48,18 @@ const config = {
           "25%": { transform: "rotate(1deg)" },
           "75%": { transform: "rotate(-1deg)" },
         },
+        "hero-shine": {
+          "0%": { backgroundPosition: "-200% 0" },
+          "100%": { backgroundPosition: "200% 0" }
+        },
+        "fade-in": {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" }
+        },
+        "slide-in": {
+          "0%": { transform: "translateY(20px)", opacity: "0" },
+          "100%": { transform: "translateY(0)", opacity: "1" }
+        }
       },
       colors: {
         border: "hsl(var(--border))",
@@ -53,7 +68,7 @@ const config = {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         marvel: {
-          red: "#D32F2F",     // Crimson Red
+          red: "#E23636",     // Marvel Red
           navy: "#0B1C3C",     // Dark Navy
           white: "#FFFFFF",    // White
           cyan: "#00CFFF",     // Light Cyan
@@ -63,6 +78,10 @@ const config = {
           black: "#000000",    // Pure Black
           blue: "#007BFF",     // Electric Blue
           captain: "#1976D2",  // Captain America Blue
+          ironman: "#F39C12",  // Iron Man Gold
+          hulk: "#2ECC71",     // Hulk Green
+          thor: "#5D4037",     // Thor Brown
+          shield: "#003366",   // SHIELD Blue
         },
         orange: {
           DEFAULT: "#F97316",
@@ -84,37 +103,14 @@ const config = {
         'glow': '0 0 15px rgba(0, 207, 255, 0.5)',
         'glow-strong': '0 0 25px rgba(0, 207, 255, 0.8)',
         'hero': '0 10px 25px -5px rgba(0, 123, 255, 0.3)',
-        '3d': '0 10px 30px -15px rgba(0, 0, 0, 0.5), 0 4px 6px -2px rgba(0, 0, 0, 0.3)',
-        'card-3d': '0 20px 30px -10px rgba(0, 0, 0, 0.4), 0 10px 20px -5px rgba(0, 123, 255, 0.2)',
+        'marvel': '0 4px 12px rgba(226, 54, 54, 0.25)',
+        'ironman': '0 0 15px rgba(243, 156, 18, 0.4)',
       },
-      transitionProperty: {
-        'transform-opacity': 'transform, opacity',
+      backgroundImage: {
+        'avengers-pattern': "url('/lovable-uploads/a34081ee-992f-41f8-ac2a-cb0f992bd76d.png')"
       },
-      transformStyle: {
-        '3d': 'preserve-3d',
-        'flat': 'flat',
-      },
-      perspective: {
-        'none': 'none',
-        '500': '500px',
-        '1000': '1000px',
-        '1500': '1500px',
-        '2000': '2000px',
-      },
-      backfaceVisibility: {
-        'visible': 'visible',
-        'hidden': 'hidden',
-      },
-      transformOrigin: {
-        'center-left': 'center left',
-        'center-right': 'center right',
-      },
-      translate: {
-        'z-0': '0px',
-        'z-2': '2px',
-        'z-4': '4px',
-        'z-10': '10px',
-        'z-20': '20px',
+      fontFamily: {
+        'marvel': ['Anton', 'sans-serif'],
       },
     },
   },
@@ -122,47 +118,22 @@ const config = {
     shadcnPlugin,
     function({ addUtilities }) {
       const newUtilities = {
-        '.transform-style-3d': {
-          'transform-style': 'preserve-3d',
+        '.clip-path-shield': {
+          'clipPath': 'polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%)',
         },
-        '.transform-style-flat': {
-          'transform-style': 'flat',
+        '.clip-path-stone': {
+          'clipPath': 'polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)',
         },
-        '.backface-visible': {
-          'backface-visibility': 'visible',
+        '.marvel-gradient': {
+          'background': 'linear-gradient(90deg, #E23636, #0B1C3C)',
+          'backgroundSize': '200% auto',
+          'animation': 'hero-shine 2s forwards ease-in-out',
+          'backgroundClip': 'text',
+          'WebkitBackgroundClip': 'text',
+          'color': 'transparent',
         },
-        '.backface-hidden': {
-          'backface-visibility': 'hidden',
-        },
-        '.perspective-none': {
-          'perspective': 'none',
-        },
-        '.perspective-500': {
-          'perspective': '500px',
-        },
-        '.perspective-1000': {
-          'perspective': '1000px',
-        },
-        '.perspective-1500': {
-          'perspective': '1500px',
-        },
-        '.translate-z-0': {
-          'transform': 'translateZ(0)',
-        },
-        '.translate-z-10': {
-          'transform': 'translateZ(10px)',
-        },
-        '.translate-z-20': {
-          'transform': 'translateZ(20px)',
-        },
-        '.translate-z-30': {
-          'transform': 'translateZ(30px)',
-        },
-        '.translate-z-40': {
-          'transform': 'translateZ(40px)',
-        },
-        '.translate-z-50': {
-          'transform': 'translateZ(50px)',
+        '.shield-bg': {
+          'background': 'radial-gradient(circle, #E23636 0%, #E23636 33%, #FFFFFF 33%, #FFFFFF 66%, #007BFF 66%, #007BFF 100%)',
         },
       }
       addUtilities(newUtilities)

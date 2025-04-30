@@ -1,8 +1,9 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 @layer base {
   :root {
@@ -15,7 +16,7 @@
     --popover: 217 56% 14%;
     --popover-foreground: 0 0% 100%;
 
-    --primary: 210 100% 50%;
+    --primary: 0 63% 55%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 217 56% 14%;
@@ -24,7 +25,7 @@
     --muted: 215 25% 27%;
     --muted-foreground: 215 20% 80%;
 
-    --accent: 194 100% 50%;
+    --accent: 0 63% 55%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 65% 52%;
@@ -32,9 +33,9 @@
 
     --border: 214 32% 30%;
     --input: 214 32% 30%;
-    --ring: 194 100% 50%;
+    --ring: 0 63% 55%;
 
-    --radius: 0.75rem;
+    --radius: 0.5rem;
   }
 }
 
@@ -49,7 +50,6 @@
 
   body {
     @apply bg-background text-foreground;
-    perspective: 1000px;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -57,11 +57,11 @@
   }
 
   h1 {
-    @apply text-4xl md:text-5xl lg:text-6xl font-orbitron;
+    @apply text-4xl md:text-5xl lg:text-6xl;
   }
 
   h2 {
-    @apply text-3xl md:text-4xl font-orbitron;
+    @apply text-3xl md:text-4xl;
   }
 
   h3 {
@@ -76,39 +76,16 @@
     @apply bg-marvel-navy/80 backdrop-blur-md border border-marvel-grey/30 shadow-lg;
   }
 
-  /* 3D transform classes */
-  .hover-3d {
-    transition: transform 0.3s ease;
-    transform-style: preserve-3d;
-    perspective: 1000px;
-  }
-
-  .hover-3d:hover {
-    transform: translateY(-5px) translateZ(20px);
-  }
-
-  .translate-z-2 {
-    transform: translateZ(2px);
-  }
-
-  .translate-z-4 {
-    transform: translateZ(4px);
-  }
-
-  .translate-z-10 {
-    transform: translateZ(10px);
-  }
-
   .hover-scale {
     @apply transition-transform duration-300 hover:scale-[1.02];
   }
 
   .smooth-shadow {
-    box-shadow: 0 10px 30px -5px rgba(0, 123, 255, 0.3);
+    box-shadow: 0 10px 30px -5px rgba(226, 54, 54, 0.2);
   }
 
   .gradient-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-marvel-blue to-marvel-cyan;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-marvel-red to-marvel-cyan;
   }
 
   .section-padding {
@@ -136,35 +113,33 @@
     @apply opacity-100;
   }
 
-  .font-orbitron {
-    font-family: 'Orbitron', sans-serif;
+  .font-marvel {
+    font-family: 'Anton', sans-serif;
   }
 
   /* Marvel-style shield gradient */
   .shield-gradient {
-    background: linear-gradient(135deg, #D32F2F 0%, #1976D2 100%);
+    background: linear-gradient(135deg, #E23636 0%, #1976D2 100%);
   }
   
-  /* Enhanced 3D lens flare */
+  /* Enhanced lens flare */
   .lens-flare {
     background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.8) 0%, transparent 60%);
     mix-blend-mode: overlay;
     opacity: 0.5;
     pointer-events: none;
-    transform-style: preserve-3d;
-    transform: translateZ(5px);
   }
   
   /* Avengers-style tech pattern */
   .tech-pattern {
     background-image: 
-      radial-gradient(circle at 50% 50%, rgba(0, 207, 255, 0.1) 0%, transparent 80%),
-      linear-gradient(45deg, rgba(0, 123, 255, 0.05) 25%, transparent 25%),
+      radial-gradient(circle at 50% 50%, rgba(226, 54, 54, 0.1) 0%, transparent 80%),
+      linear-gradient(45deg, rgba(226, 54, 54, 0.05) 25%, transparent 25%),
       linear-gradient(135deg, rgba(0, 123, 255, 0.05) 25%, transparent 25%),
-      linear-gradient(45deg, transparent 75%, rgba(0, 123, 255, 0.05) 75%),
+      linear-gradient(45deg, transparent 75%, rgba(226, 54, 54, 0.05) 75%),
       linear-gradient(135deg, transparent 75%, rgba(0, 123, 255, 0.05) 75%),
-      repeating-linear-gradient(90deg, rgba(211, 47, 47, 0.03) 0, rgba(211, 47, 47, 0.03) 1px, transparent 1px, transparent 20px),
-      repeating-linear-gradient(180deg, rgba(211, 47, 47, 0.03) 0, rgba(211, 47, 47, 0.03) 1px, transparent 1px, transparent 20px);
+      repeating-linear-gradient(90deg, rgba(226, 54, 54, 0.03) 0, rgba(226, 54, 54, 0.03) 1px, transparent 1px, transparent 20px),
+      repeating-linear-gradient(180deg, rgba(0, 123, 255, 0.03) 0, rgba(0, 123, 255, 0.03) 1px, transparent 1px, transparent 20px);
     background-size: 100% 100%, 20px 20px, 20px 20px, 20px 20px, 20px 20px, 100% 100%, 100% 100%;
     background-position: 0 0, 0 0, 10px 10px, 0 0, 10px 10px, 0 0, 0 0;
   }
@@ -188,55 +163,24 @@
 }
 
 @layer components {
-  /* 3D Button styles */
   .button-primary {
-    @apply px-6 py-3 font-medium text-white bg-marvel-captain rounded-lg relative shadow-hero hover:shadow-glow-strong hover:bg-marvel-blue transition-all duration-300;
-    transform-style: preserve-3d;
-  }
-
-  .button-primary:hover {
-    transform: translateY(-2px) translateZ(10px);
+    @apply px-6 py-3 font-medium text-white bg-marvel-red rounded-lg relative shadow-marvel hover:bg-marvel-red/90 hover:shadow-lg transition-all duration-300;
   }
 
   .button-secondary {
-    @apply px-6 py-3 font-medium bg-marvel-navy text-white rounded-lg shadow-hero hover:shadow-glow hover:text-marvel-cyan transition-all duration-300;
-    transform-style: preserve-3d;
-  }
-
-  .button-secondary:hover {
-    transform: translateY(-2px) translateZ(10px);
+    @apply px-6 py-3 font-medium bg-marvel-navy text-white rounded-lg shadow-marvel hover:text-marvel-red transition-all duration-300;
   }
 
   .button-outline {
-    @apply px-6 py-3 font-medium border border-marvel-cyan text-marvel-cyan rounded-lg hover:bg-marvel-cyan/10 hover:shadow-glow transition-all duration-300;
-    transform-style: preserve-3d;
-  }
-
-  .button-outline:hover {
-    transform: translateY(-2px) translateZ(10px);
+    @apply px-6 py-3 font-medium border border-marvel-red text-marvel-red rounded-lg hover:bg-marvel-red/10 transition-all duration-300;
   }
 
   .button-danger {
-    @apply px-6 py-3 font-medium bg-marvel-red text-white rounded-lg shadow-hero hover:shadow-glow transition-all duration-300;
-    transform-style: preserve-3d;
-  }
-
-  .button-danger:hover {
-    transform: translateY(-2px) translateZ(10px);
-  }
-
-  /* 3D Card styles */
-  .card-hover {
-    @apply transition-all duration-300 hover:translate-y-[-5px] hover:shadow-glow;
-    transform-style: preserve-3d;
-  }
-
-  .card-hover:hover {
-    transform: translateY(-5px) translateZ(20px);
+    @apply px-6 py-3 font-medium bg-marvel-red text-white rounded-lg shadow-marvel transition-all duration-300;
   }
 
   .section-heading {
-    @apply text-3xl md:text-4xl font-bold text-center mb-6 text-white font-orbitron relative;
+    @apply text-3xl md:text-4xl font-bold text-center mb-6 text-white relative;
     text-shadow: 0 2px 10px rgba(255, 255, 255, 0.2);
   }
   
@@ -248,14 +192,13 @@
     @apply text-lg text-gray-300 max-w-2xl mx-auto text-center mb-16 mt-8;
   }
 
-  /* 3D Enhanced Cards */
+  /* Enhanced Cards */
   .marvel-card {
-    @apply bg-gradient-to-br from-marvel-navy to-marvel-navy/80 backdrop-blur-md border border-marvel-grey/30 rounded-lg shadow-hero hover:shadow-glow transition-all duration-300;
-    transform-style: preserve-3d;
+    @apply bg-gradient-to-br from-marvel-navy to-marvel-navy/80 backdrop-blur-md border border-marvel-red/20 rounded-lg shadow-marvel transition-all duration-300;
   }
 
   .marvel-card:hover {
-    transform: translateY(-5px) translateZ(10px);
+    @apply border-marvel-red/40 shadow-lg;
   }
 
   .marvel-highlight {
@@ -270,10 +213,9 @@
     @apply scale-x-100 origin-bottom-left;
   }
   
-  /* 3D Movie poster style card */
+  /* Movie poster style card */
   .poster-card {
     @apply relative overflow-hidden rounded-lg shadow-lg;
-    transform-style: preserve-3d;
   }
   
   .poster-card::before {
@@ -282,7 +224,6 @@
   
   .poster-card-content {
     @apply absolute bottom-0 left-0 w-full p-4 z-20;
-    transform: translateZ(10px);
   }
 }
 
@@ -297,20 +238,35 @@
 
 @keyframes float {
   0%, 100% {
-    transform: translateY(0) translateZ(10px);
+    transform: translateY(0);
   }
   50% {
-    transform: translateY(-10px) translateZ(20px);
+    transform: translateY(-10px);
   }
 }
 
 @keyframes glow {
   0%, 100% {
-    filter: drop-shadow(0 0 5px rgba(0, 207, 255, 0.7));
+    filter: drop-shadow(0 0 5px rgba(226, 54, 54, 0.7));
   }
   50% {
-    filter: drop-shadow(0 0 15px rgba(0, 207, 255, 0.9));
+    filter: drop-shadow(0 0 15px rgba(226, 54, 54, 0.9));
   }
+}
+
+@keyframes hero-shine {
+  from { background-position: -200% 0; }
+  to { background-position: 200% 0; }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-in {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
 }
 
 /* Custom scroll bar */
@@ -324,12 +280,12 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(211, 47, 47, 0.6);
+  background: rgba(226, 54, 54, 0.6);
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(211, 47, 47, 0.8);
+  background: rgba(226, 54, 54, 0.8);
 }
 
 /* Smooth scroll behavior */
@@ -340,5 +296,6 @@ html {
 /* Marvel-style divider */
 .marvel-divider {
   height: 4px;
-  background: linear-gradient(to right, transparent, #D32F2F, transparent);
+  background: linear-gradient(to right, transparent, #E23636, transparent);
 }
+
