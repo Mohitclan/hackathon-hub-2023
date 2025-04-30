@@ -293,11 +293,80 @@
     animation: beam-pulse 3s ease-in-out infinite;
   }
   
+  /* Thor's Hammer */
+  .thor-hammer {
+    position: relative;
+    width: 100px;
+    height: 150px;
+    transform-origin: bottom center;
+  }
+  
+  .thor-hammer:before {
+    /* Hammer head */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 40px;
+    background: linear-gradient(to bottom, #d3d3d3, #a0a0a0);
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+  }
+  
+  .thor-hammer:after {
+    /* Handle */
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 80px;
+    background: linear-gradient(to bottom, #8B4513, #654321);
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Lightning Animation */
+  @keyframes lightning-flash {
+    0%, 100% { opacity: 0; }
+    10%, 90% { opacity: 0.1; }
+    50% { opacity: 0.8; }
+  }
+  
+  .lightning-container {
+    pointer-events: none;
+    filter: drop-shadow(0 0 10px rgba(33, 150, 243, 0.8));
+  }
+  
   /* Infinity Stone Card Transform */
   .infinity-stone {
     transform-style: preserve-3d;
     perspective: 1000px;
     transition: transform 0.6s ease-out;
+  }
+
+  /* Thor Hammer Spinning Animation */
+  @keyframes hammer-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  .hammer-spin {
+    animation: hammer-spin 2s ease-in-out;
+  }
+
+  /* Thor Lightning Flash */
+  .lightning-flash {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.9);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 100;
+    mix-blend-mode: screen;
+    animation: lightning-flash 0.5s ease-out;
   }
 }
 

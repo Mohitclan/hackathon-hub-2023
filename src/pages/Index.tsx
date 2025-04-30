@@ -14,6 +14,9 @@ import Footer from '../components/Footer';
 const Index = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [showShield, setShowShield] = useState(false);
+  const [showLightning, setShowLightning] = useState(false);
+  const [lightningPosition, setLightningPosition] = useState({ x: 0, y: 0 });
+  const [lightningOpacity, setLightningOpacity] = useState(0);
 
   useEffect(() => {
     // Update page title
@@ -35,6 +38,23 @@ const Index = () => {
       } else {
         setShowShield(false);
       }
+
+      // Randomly show lightning effects during scroll
+      if (window.scrollY > 200 && Math.random() < 0.05) {
+        const x = Math.random() * window.innerWidth;
+        const y = 100 + Math.random() * 400;
+        setLightningPosition({ x, y });
+        setLightningOpacity(0.8);
+        setShowLightning(true);
+        
+        // Hide lightning after a short delay
+        setTimeout(() => {
+          setLightningOpacity(0);
+          setTimeout(() => {
+            setShowLightning(false);
+          }, 300);
+        }, 200 + Math.random() * 300);
+      }
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -47,6 +67,25 @@ const Index = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+
+  // Generate a random lightning bolt path
+  const generateLightningPath = () => {
+    // Starting point
+    let path = `M${30 + Math.random() * 10} 0`;
+    
+    // Generate zigzag path
+    let currentY = 0;
+    const segmentCount = 6 + Math.floor(Math.random() * 4);
+    const segmentHeight = 100 / segmentCount;
+    
+    for (let i = 1; i <= segmentCount; i++) {
+      const xOffset = 25 + Math.random() * 50;
+      currentY += segmentHeight;
+      path += ` L${xOffset} ${currentY}`;
+    }
+    
+    return path;
+  };
 
   return (
     <div className="overflow-x-hidden bg-gradient-to-b from-black to-marvel-navy/95">
@@ -108,6 +147,61 @@ const Index = () => {
         }}
       >
         <div className="spider-hanging"></div>
+      </div>
+      
+      {/* Thor's Lightning Effects */}
+      {showLightning && (
+        <>
+          {/* Main lightning bolt */}
+          <div 
+            className="fixed z-20 pointer-events-none"
+            style={{ 
+              left: `${lightningPosition.x}px`,
+              top: `${lightningPosition.y}px`,
+              transition: 'opacity 0.2s ease-out',
+              opacity: lightningOpacity
+            }}
+          >
+            <svg width="100" height="300" viewBox="0 0 100 300" fill="none">
+              <path
+                d={generateLightningPath()}
+                stroke="white"
+                strokeWidth="6"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <path
+                d={generateLightningPath()}
+                stroke="#1EAEDB"
+                strokeWidth="3"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </div>
+          
+          {/* Lightning flash/glow effect */}
+          <div 
+            className="fixed inset-0 pointer-events-none bg-gradient-to-b from-blue-500/5 to-transparent z-10"
+            style={{ 
+              transition: 'opacity 0.3s ease-out',
+              opacity: lightningOpacity * 0.3
+            }}
+          ></div>
+        </>
+      )}
+      
+      {/* Thor's Hammer (appears at certain scroll position) */}
+      <div 
+        className="fixed right-20 z-10 pointer-events-none"
+        style={{ 
+          top: Math.min(Math.max(scrollPosition - 1200, -200), 200),
+          opacity: Math.min(1, Math.max(0, (scrollPosition - 1000) / 300)),
+          transform: `rotate(${Math.sin(scrollPosition / 500) * 10}deg)`,
+          transition: 'transform 0.5s ease-out'
+        }}
+      >
+        <div className="thor-hammer"></div>
       </div>
     </div>
   );
