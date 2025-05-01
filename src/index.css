@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -15,7 +16,7 @@
     --popover: 217 56% 14%;
     --popover-foreground: 0 0% 100%;
 
-    --primary: 0 63% 55%;
+    --primary: 210 79% 46%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 217 56% 14%;
@@ -24,15 +25,15 @@
     --muted: 215 25% 27%;
     --muted-foreground: 215 20% 80%;
 
-    --accent: 0 63% 55%;
+    --accent: 210 79% 46%;
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 65% 52%;
+    --destructive: 210 79% 46%;
     --destructive-foreground: 0 0% 98%;
 
     --border: 214 32% 30%;
     --input: 214 32% 30%;
-    --ring: 0 63% 55%;
+    --ring: 210 79% 46%;
 
     --radius: 0.5rem;
   }
@@ -80,7 +81,7 @@
   }
 
   .smooth-shadow {
-    box-shadow: 0 10px 30px -5px rgba(226, 54, 54, 0.2);
+    box-shadow: 0 10px 30px -5px rgba(25, 118, 210, 0.2);
   }
 
   .gradient-text {
@@ -118,9 +119,9 @@
     text-rendering: optimizeLegibility;
   }
 
-  /* Marvel-style shield gradient */
+  /* Marvel-style shield gradient - Updated for more realism */
   .shield-gradient {
-    background: linear-gradient(135deg, #E23636 0%, #1976D2 100%);
+    background: linear-gradient(135deg, #1976D2 0%, #1976D2 100%);
   }
   
   /* Enhanced lens flare - reduced opacity for less blur */
@@ -134,10 +135,10 @@
   /* Avengers-style tech pattern */
   .tech-pattern {
     background-image: 
-      radial-gradient(circle at 50% 50%, rgba(226, 54, 54, 0.1) 0%, transparent 80%),
-      linear-gradient(45deg, rgba(226, 54, 54, 0.05) 25%, transparent 25%),
+      radial-gradient(circle at 50% 50%, rgba(25, 118, 210, 0.1) 0%, transparent 80%),
+      linear-gradient(45deg, rgba(25, 118, 210, 0.05) 25%, transparent 25%),
       linear-gradient(135deg, rgba(0, 123, 255, 0.05) 25%, transparent 25%),
-      linear-gradient(45deg, transparent 75%, rgba(226, 54, 54, 0.05) 75%),
+      linear-gradient(45deg, transparent 75%, rgba(25, 118, 210, 0.05) 75%),
       linear-gradient(135deg, transparent 75%, rgba(0, 123, 255, 0.05) 75%);
     background-size: 100% 100%, 20px 20px, 20px 20px, 20px 20px, 20px 20px;
     background-position: 0 0, 0 0, 10px 10px, 0 0, 10px 10px;
@@ -188,28 +189,48 @@
     z-index: 1;
   }
   
-  /* Captain America Shield - Fixed Position */
+  /* Captain America Shield - Fixed Position with Realistic Effects */
   .captain-america-shield-fixed {
     position: relative;
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    background: radial-gradient(
-      circle,
-      #E23636 0%,
-      #E23636 20%,
-      #FFFFFF 20%,
-      #FFFFFF 40%,
-      #E23636 40%,
-      #E23636 60%,
-      #1976D2 60%,
-      #1976D2 80%,
-      #FFFFFF 80%,
-      #FFFFFF 100%
-    );
-    box-shadow: 0 0 30px rgba(25, 118, 210, 0.7);
-    opacity: 0.9;
+    background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 50%, rgba(0,0,0,0.2) 100%), 
+      radial-gradient(
+        circle,
+        #E23636 0%,
+        #E23636 20%,
+        #FFFFFF 20%,
+        #FFFFFF 40%,
+        #E23636 40%,
+        #E23636 60%,
+        #1976D2 60%,
+        #1976D2 80%,
+        #FFFFFF 80%,
+        #FFFFFF 100%
+      );
+    box-shadow: 
+      0 10px 30px rgba(25, 118, 210, 0.7),
+      inset 0 -10px 20px rgba(0,0,0,0.2),
+      inset 0 10px 20px rgba(255,255,255,0.5);
+    opacity: 0.95;
+    transform-style: preserve-3d;
     animation: shield-pulse 3s ease-in-out infinite;
+  }
+  
+  /* Add metallic effect to the shield */
+  .captain-america-shield-fixed:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      radial-gradient(circle at 30% 30%, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 50%),
+      radial-gradient(circle at 70% 70%, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0) 50%);
+    border-radius: 50%;
+    opacity: 0.9;
   }
   
   /* Spider Webs */
@@ -293,42 +314,6 @@
     animation: beam-pulse 3s ease-in-out infinite;
   }
   
-  /* Thor's Hammer */
-  .thor-hammer {
-    position: relative;
-    width: 100px;
-    height: 150px;
-    transform-origin: bottom center;
-  }
-  
-  .thor-hammer:before {
-    /* Hammer head */
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 40px;
-    background: linear-gradient(to bottom, #d3d3d3, #a0a0a0);
-    border-radius: 5px;
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
-  }
-  
-  .thor-hammer:after {
-    /* Handle */
-    content: '';
-    position: absolute;
-    top: 40px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 20px;
-    height: 80px;
-    background: linear-gradient(to bottom, #8B4513, #654321);
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  }
-  
   /* Lightning Animation */
   @keyframes lightning-flash {
     0%, 100% { opacity: 0; }
@@ -348,17 +333,7 @@
     transition: transform 0.6s ease-out;
   }
 
-  /* Thor Hammer Spinning Animation */
-  @keyframes hammer-spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
-  
-  .hammer-spin {
-    animation: hammer-spin 2s ease-in-out;
-  }
-
-  /* Thor Lightning Flash */
+  /* Lightning Flash */
   .lightning-flash {
     position: absolute;
     background-color: rgba(255, 255, 255, 0.9);
@@ -456,10 +431,10 @@
 
 @keyframes glow {
   0%, 100% {
-    filter: drop-shadow(0 0 5px rgba(226, 54, 54, 0.7));
+    filter: drop-shadow(0 0 5px rgba(25, 118, 210, 0.7));
   }
   50% {
-    filter: drop-shadow(0 0 15px rgba(226, 54, 54, 0.9));
+    filter: drop-shadow(0 0 15px rgba(25, 118, 210, 0.9));
   }
 }
 
@@ -519,12 +494,12 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(226, 54, 54, 0.6);
+  background: rgba(25, 118, 210, 0.6);
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(226, 54, 54, 0.8);
+  background: rgba(25, 118, 210, 0.8);
 }
 
 /* Smooth scroll behavior */
@@ -535,5 +510,5 @@ html {
 /* Marvel-style divider */
 .marvel-divider {
   height: 4px;
-  background: linear-gradient(to right, transparent, #E23636, transparent);
+  background: linear-gradient(to right, transparent, #1976D2, transparent);
 }

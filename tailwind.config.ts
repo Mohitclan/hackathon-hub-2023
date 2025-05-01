@@ -68,13 +68,13 @@ const config = {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         marvel: {
-          red: "#E23636",     // Marvel Red
+          red: "#1976D2",     // Changed from red to blue
           navy: "#0B1C3C",     // Dark Navy
           white: "#FFFFFF",    // White
           cyan: "#00CFFF",     // Light Cyan
           grey: "#404854",     // Steel Grey
           gold: "#FDB827",     // Marvel Gold
-          darkred: "#800000",  // Dark Red for backgrounds
+          darkred: "#00366B",  // Changed from dark red to dark blue
           black: "#000000",    // Pure Black
           blue: "#007BFF",     // Electric Blue
           captain: "#1976D2",  // Captain America Blue
@@ -100,10 +100,10 @@ const config = {
         sm: "calc(var(--radius) - 4px)",
       },
       boxShadow: {
-        'glow': '0 0 15px rgba(0, 207, 255, 0.5)',
-        'glow-strong': '0 0 25px rgba(0, 207, 255, 0.8)',
+        'glow': '0 0 15px rgba(0, 123, 255, 0.5)',
+        'glow-strong': '0 0 25px rgba(0, 123, 255, 0.8)',
         'hero': '0 10px 25px -5px rgba(0, 123, 255, 0.3)',
-        'marvel': '0 4px 12px rgba(226, 54, 54, 0.25)',
+        'marvel': '0 4px 12px rgba(25, 118, 210, 0.25)',
         'ironman': '0 0 15px rgba(243, 156, 18, 0.4)',
       },
       backgroundImage: {
@@ -125,7 +125,7 @@ const config = {
           'clipPath': 'polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)',
         },
         '.marvel-gradient': {
-          'background': 'linear-gradient(90deg, #E23636, #0B1C3C)',
+          'background': 'linear-gradient(90deg, #1976D2, #0B1C3C)',
           'backgroundSize': '200% auto',
           'animation': 'hero-shine 2s forwards ease-in-out',
           'backgroundClip': 'text',
@@ -133,7 +133,7 @@ const config = {
           'color': 'transparent',
         },
         '.shield-bg': {
-          'background': 'radial-gradient(circle, #E23636 0%, #E23636 33%, #FFFFFF 33%, #FFFFFF 66%, #007BFF 66%, #007BFF 100%)',
+          'background': 'radial-gradient(circle, #E23636 0%, #E23636 33%, #FFFFFF 33%, #FFFFFF 66%, #1976D2 66%, #1976D2 100%)',
         },
       }
       addUtilities(newUtilities)

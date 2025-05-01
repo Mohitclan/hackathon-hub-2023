@@ -118,14 +118,20 @@ const Index = () => {
         />
       </div>
 
-      {/* Floating Captain America Shield */}
+      {/* Floating Captain America Shield - Updated with new texture/image */}
       <div 
         className={`fixed right-0 bottom-40 z-10 transition-all duration-700 ease-in-out pointer-events-none ${showShield ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full'}`}
         style={{ 
           transform: `translateY(${Math.sin(scrollPosition / 300) * 20}px) rotate(${scrollPosition * 0.05}deg)`,
         }}
       >
-        <div className="captain-america-shield-fixed w-32 h-32 md:w-40 md:h-40"></div>
+        <div className="w-32 h-32 md:w-40 md:h-40 relative">
+          <img 
+            src="/lovable-uploads/38a5a6e3-3ef3-4d80-b249-37a728f5023b.png" 
+            alt="Captain America Shield" 
+            className="w-full h-full object-contain animate-pulse-slow drop-shadow-lg"
+          />
+        </div>
       </div>
       
       {/* Iron Man Repulsor Beam */}
@@ -191,17 +197,15 @@ const Index = () => {
         </>
       )}
       
-      {/* Thor's Hammer (appears at certain scroll position) */}
-      <div 
-        className="fixed right-20 z-10 pointer-events-none"
-        style={{ 
-          top: Math.min(Math.max(scrollPosition - 1200, -200), 200),
-          opacity: Math.min(1, Math.max(0, (scrollPosition - 1000) / 300)),
-          transform: `rotate(${Math.sin(scrollPosition / 500) * 10}deg)`,
-          transition: 'transform 0.5s ease-out'
-        }}
-      >
-        <div className="thor-hammer"></div>
+      {/* Add HackQuanta Poster */}
+      <div className="fixed left-5 bottom-10 z-10 w-24 h-32 md:w-36 md:h-48 shadow-xl rounded-lg overflow-hidden pointer-events-none">
+        <img 
+          src="/lovable-uploads/6566c9f3-cd84-4e9a-865a-bcac527e170c.png" 
+          alt="HackQuanta Poster" 
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+        <div className="absolute bottom-2 left-0 w-full text-center text-xs font-bold text-white">HACKQUANTA</div>
       </div>
     </div>
   );

@@ -44,7 +44,7 @@ const Prizes = () => {
       title: "Reality Stone",
       position: "Second Prize",
       image: PRIZES.second,
-      color: "bg-red-600",
+      color: "bg-blue-600",  // Updated from red to blue
       icon: <Star className="w-8 h-8 text-white" />,
       prize: "₹8,000",
       description: "Bend reality with a powerful tablet, cloud credits, and exclusive software licenses to bring your visions to life."
@@ -100,11 +100,11 @@ const Prizes = () => {
           {infinityStones.map((stone, index) => (
             <Transition key={index} animation="fade-in-up" delay={300 + index * 100}>
               <div 
-                className={`rounded-xl overflow-hidden h-full flex flex-col clip-path-stone infinity-stone ${stone.color} transform-gpu`}
+                className={`rounded-xl overflow-hidden h-full flex flex-col infinity-stone ${stone.color} transform-gpu`}
                 style={{
                   transition: "transform 0.6s ease-out",
                   boxShadow: `0 10px 25px ${index === 0 ? 'rgba(147, 51, 234, 0.5)' : 
-                              index === 1 ? 'rgba(225, 29, 72, 0.5)' : 
+                              index === 1 ? 'rgba(37, 99, 235, 0.5)' : 
                               index === 2 ? 'rgba(37, 99, 235, 0.5)' : 
                               'rgba(234, 179, 8, 0.5)'}`
                 }}
@@ -117,7 +117,6 @@ const Prizes = () => {
                         src={stone.image} 
                         alt={stone.title}
                         className="w-full h-full object-cover transition-transform duration-500 ease-out hover:scale-110"
-                        style={{objectFit: "cover"}}
                       />
                       <div className="absolute top-4 left-4 bg-black rounded-full p-2 z-20">
                         {stone.icon}
