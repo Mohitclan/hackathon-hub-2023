@@ -1,9 +1,9 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Raleway:wght@300;400;500;600;700&display=swap');
 
 @layer base {
   :root {
@@ -46,6 +46,7 @@
 
   html, body {
     @apply scroll-smooth antialiased bg-marvel-navy text-white;
+    font-family: 'Raleway', sans-serif;
   }
 
   body {
@@ -54,14 +55,17 @@
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-sans font-bold tracking-tight;
+    font-family: 'Montserrat', sans-serif;
   }
 
   h1 {
     @apply text-4xl md:text-5xl lg:text-6xl;
+    letter-spacing: -0.02em;
   }
 
   h2 {
     @apply text-3xl md:text-4xl;
+    letter-spacing: -0.01em;
   }
 
   h3 {
@@ -70,6 +74,7 @@
 
   p {
     @apply leading-7;
+    font-family: 'Raleway', sans-serif;
   }
 
   .glass {
@@ -114,9 +119,11 @@
   }
 
   .font-marvel {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
     letter-spacing: 0.05em;
     text-rendering: optimizeLegibility;
+    text-transform: uppercase;
   }
 
   /* Marvel-style shield gradient - Updated for more realism */

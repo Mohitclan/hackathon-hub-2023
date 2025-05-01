@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
@@ -22,9 +21,9 @@ const Index = () => {
     // Update page title
     document.title = 'HackQuanta: Code for the Multiverse - 2025';
     
-    // Add Google font for Marvel style - replacing with Bebas Neue for sharper text
+    // Add professional fonts
     const link = document.createElement('link');
-    link.href = 'https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;500;600;700&display=swap';
+    link.href = 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Raleway:wght@300;400;500;600;700&display=swap';
     link.rel = 'stylesheet';
     document.head.appendChild(link);
 
@@ -88,7 +87,7 @@ const Index = () => {
   };
 
   return (
-    <div className="overflow-x-hidden bg-gradient-to-b from-black to-marvel-navy/95">
+    <div className="overflow-x-hidden bg-gradient-to-b from-black to-marvel-navy/95 font-body">
       {/* Modern grid pattern background */}
       <div className="fixed inset-0 z-0 pointer-events-none opacity-10">
         <div className="absolute inset-0 tech-pattern"></div>

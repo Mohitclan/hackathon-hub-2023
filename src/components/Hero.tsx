@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { ArrowDown, Star, Calendar, Clock, MapPin } from 'lucide-react';
 import Transition from './Transition';
@@ -42,11 +43,11 @@ const Hero = () => {
       id="hero-section" 
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Background imagery with Avengers image */}
+      {/* Background imagery with new hero image */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="/lovable-uploads/6bf8daba-7fd7-44f2-bd14-e93072eb3692.png" 
-          alt="Avengers Heroes" 
+          src="/lovable-uploads/d936f404-da48-4118-bd45-25f1a0203fd7.png" 
+          alt="HackQuanta Hero" 
           className="absolute inset-0 w-full h-full object-cover opacity-20"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/90 to-transparent"></div>

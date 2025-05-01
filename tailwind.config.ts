@@ -110,7 +110,10 @@ const config = {
         'avengers-pattern': "url('/lovable-uploads/a34081ee-992f-41f8-ac2a-cb0f992bd76d.png')"
       },
       fontFamily: {
-        'marvel': ['Anton', 'sans-serif'],
+        'marvel': ['Montserrat', 'sans-serif'],
+        'sans': ['Raleway', 'Inter', 'sans-serif'],
+        'heading': ['Montserrat', 'sans-serif'],
+        'body': ['Raleway', 'sans-serif'],
       },
     },
   },
