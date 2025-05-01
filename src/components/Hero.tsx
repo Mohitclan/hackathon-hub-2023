@@ -43,11 +43,11 @@ const Hero = () => {
       id="hero-section" 
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Background imagery with Avengers pattern */}
+      {/* Background imagery with hackathon poster */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="/lovable-uploads/4c52062d-66ef-4618-98f0-7a9eb53e1658.png" 
-          alt="Marvel Heroes" 
+          src="/lovable-uploads/13c13b9c-970a-4b2c-b973-5021e8869aab.png" 
+          alt="Hackathon Poster" 
           className="absolute inset-0 w-full h-full object-cover opacity-20"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/90 to-transparent"></div>

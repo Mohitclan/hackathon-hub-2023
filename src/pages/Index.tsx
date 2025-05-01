@@ -118,7 +118,7 @@ const Index = () => {
         />
       </div>
 
-      {/* Floating Captain America Shield - Updated with new texture/image */}
+      {/* Floating Captain America Shield - Updated with transparent shield */}
       <div 
         className={`fixed right-0 bottom-40 z-10 transition-all duration-700 ease-in-out pointer-events-none ${showShield ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full'}`}
         style={{ 
@@ -126,10 +126,12 @@ const Index = () => {
         }}
       >
         <div className="w-32 h-32 md:w-40 md:h-40 relative">
+          {/* Use filter to add drop shadow since we're using a transparent PNG */}
           <img 
-            src="/lovable-uploads/38a5a6e3-3ef3-4d80-b249-37a728f5023b.png" 
+            src="/lovable-uploads/13c13b9c-970a-4b2c-b973-5021e8869aab.png" 
             alt="Captain America Shield" 
-            className="w-full h-full object-contain animate-pulse-slow drop-shadow-lg"
+            className="w-full h-full object-contain animate-pulse-slow filter drop-shadow-lg"
+            style={{ filter: 'drop-shadow(0px 0px 8px rgba(0, 123, 255, 0.6))' }}
           />
         </div>
       </div>
@@ -200,7 +202,7 @@ const Index = () => {
       {/* Add HackQuanta Poster */}
       <div className="fixed left-5 bottom-10 z-10 w-24 h-32 md:w-36 md:h-48 shadow-xl rounded-lg overflow-hidden pointer-events-none">
         <img 
-          src="/lovable-uploads/6566c9f3-cd84-4e9a-865a-bcac527e170c.png" 
+          src="/lovable-uploads/13c13b9c-970a-4b2c-b973-5021e8869aab.png" 
           alt="HackQuanta Poster" 
           className="w-full h-full object-cover"
         />
