@@ -169,10 +169,10 @@ const Hero = () => {
                 <div className="absolute inset-0 border-[2px] border-marvel-red rounded-lg shadow-md -m-2 opacity-30"></div>
                 <div className="absolute inset-0 border-[2px] border-marvel-blue rounded-lg shadow-md m-2 opacity-10"></div>
                 
-                {/* Hero image - using one of the new Marvel images */}
+                {/* Hero image - using the new HackQuanta poster */}
                 <div className="relative z-10 overflow-hidden rounded-lg shadow-md">
                   <img 
-                    src="" 
+                    src="/lovable-uploads/97b241be-4376-4d85-891e-b964f6c95d00.png" 
                     alt="HackQuanta Hackathon poster" 
                     className={`rounded-lg object-cover w-full transition-all duration-1000 ${
                       loaded ? 'opacity-100' : 'opacity-0 blur-lg'
