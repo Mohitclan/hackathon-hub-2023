@@ -46,7 +46,7 @@ const Hero = () => {
       {/* Background imagery with new hero image */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="/lovable-uploads/d936f404-da48-4118-bd45-25f1a0203fd7.png" 
+          src="/lovable-uploads/6bf8daba-7fd7-44f2-bd14-e93072eb3692.png" 
           alt="HackQuanta Hero" 
           className="absolute inset-0 w-full h-full object-cover opacity-20"
         />
