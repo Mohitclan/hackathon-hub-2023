@@ -172,7 +172,7 @@ const Hero = () => {
                 {/* Hero image - using one of the new Marvel images */}
                 <div className="relative z-10 overflow-hidden rounded-lg shadow-md">
                   <img 
-                    src="/lovable-uploads/21ed96bf-da1c-44b1-8d09-33755afb75cd.png" 
+                    src="" 
                     alt="HackQuanta Hackathon poster" 
                     className={`rounded-lg object-cover w-full transition-all duration-1000 ${
                       loaded ? 'opacity-100' : 'opacity-0 blur-lg'
