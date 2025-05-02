@@ -3,7 +3,7 @@ const PLACEHOLDER_BASE = 'https://placehold.co';
 
 // Hero section images
 
-
+export const HERO_IMAGE = `${PLACEHOLDER_BASE}/1200x600/f5f5f5/333333?text=Hackathon+Hero`;
 // Sponsor logos
 export const SPONSORS = {
   main: [
