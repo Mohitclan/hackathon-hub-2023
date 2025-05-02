@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { ArrowDown, Star, Calendar, Clock, MapPin } from 'lucide-react';
+import { Star, Calendar, Clock, MapPin } from 'lucide-react';
 import Transition from './Transition';
 
 const Hero = () => {
@@ -187,17 +187,6 @@ const Hero = () => {
               </div>
             </Transition>
           </div>
-        </div>
-        
-        {/* Scroll indicator */}
-        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce-slow">
-          <a 
-            href="#about" 
-            className="flex items-center justify-center w-10 h-10 rounded-full bg-marvel-red/20 hover:bg-marvel-red/30 transition-colors duration-300 hover:scale-110"
-            aria-label="Scroll to about section"
-          >
-            <ArrowDown className="w-5 h-5 text-white" />
-          </a>
         </div>
       </div>
     </section>
