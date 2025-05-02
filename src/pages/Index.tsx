@@ -182,11 +182,7 @@ const Index = () => {
       )}
       
       {/* Add HackQuanta Poster - Updated with new hackathon poster */}
-      <div className="fixed left-5 bottom-10 z-10 w-24 h-32 md:w-36 md:h-48 shadow-xl rounded-lg overflow-hidden pointer-events-none">
-        
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-        <div className="absolute bottom-2 left-0 w-full text-center text-xs font-bold text-white"></div>
-      </div>
+      
     </div>
   );
 };
