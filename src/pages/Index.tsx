@@ -109,10 +109,7 @@ const Index = () => {
         <Footer />
       </div>
       
-      {/* Avengers logo in the corner */}
-      <div className="fixed top-0 left-0 w-24 h-24 pointer-events-none">
-        
-      </div>
+     
 
       {/* Floating Captain America Shield - Updated with transparent PNG */}
       <div 
