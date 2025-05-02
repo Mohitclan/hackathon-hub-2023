@@ -1,10 +1,12 @@
-
 import React, { useState } from 'react';
-import { Check, User, Mail, Users, Briefcase, Code, Shield, Star } from 'lucide-react';
+import { Check, User, Mail, Users, Briefcase, Code, Shield, Star, ExternalLink } from 'lucide-react';
 import Transition from './Transition';
 import { useToast } from '@/hooks/use-toast';
 
 const Registration = () => {
+  // External registration URL - Replace with your Unstop hackathon link
+  const registrationUrl = "https://unstop.com/your-hackathon-registration-link";
+  
   const { toast } = useToast();
   const [form, setForm] = useState({
     name: '',
@@ -16,6 +18,8 @@ const Registration = () => {
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
+  // This function is kept for reference but won't be used directly
+  // since we're redirecting to Unstop instead
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setForm(prevForm => ({
@@ -24,20 +28,16 @@ const Registration = () => {
     }));
   };
 
+  // Instead of submitting the form, we'll show info about redirecting to Unstop
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setLoading(true);
+    window.open(registrationUrl, '_blank', 'noopener,noreferrer');
     
-    // Simulate API call
-    setTimeout(() => {
-      setLoading(false);
-      setSubmitted(true);
-      toast({
-        title: "Registration Successful!",
-        description: "You've successfully registered for the hackathon. Check your email for confirmation.",
-        variant: "default",
-      });
-    }, 1500);
+    toast({
+      title: "Redirecting to Registration",
+      description: "You're being redirected to our official registration page on Unstop.",
+      variant: "default",
+    });
   };
 
   return (
@@ -59,8 +59,8 @@ const Registration = () => {
         
         <Transition animation="fade-in-up" delay={200}>
           <p className="section-subheading">
-            Secure your spot at this exciting hackathon event. Fill out the form below to register.
-            Registration is free and includes meals, workspace, and all activities.
+            Secure your spot at this exciting hackathon event on Unstop. 
+            Click the button below to be redirected to our official registration page.
           </p>
         </Transition>
         
@@ -133,160 +133,31 @@ const Registration = () => {
             
             <div className="md:col-span-3">
               <Transition animation="fade-in-up" delay={400}>
-                <div className="marvel-card p-8 border border-marvel-grey/30">
-                  {!submitted ? (
-                    <form onSubmit={handleSubmit}>
-                      <div className="space-y-6">
-                        <div>
-                          <label htmlFor="name" className="block text-sm font-medium text-marvel-cyan mb-1">
-                            Full Name *
-                          </label>
-                          <div className="relative">
-                            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                              <User className="h-5 w-5 text-marvel-grey" />
-                            </div>
-                            <input
-                              type="text"
-                              id="name"
-                              name="name"
-                              value={form.name}
-                              onChange={handleChange}
-                              required
-                              className="pl-10 w-full rounded-lg border border-marvel-grey/50 bg-marvel-navy/50 focus:ring-marvel-cyan focus:border-marvel-cyan p-3 text-white"
-                              placeholder="John Doe"
-                            />
-                          </div>
-                        </div>
-                        
-                        <div>
-                          <label htmlFor="email" className="block text-sm font-medium text-marvel-cyan mb-1">
-                            Email Address *
-                          </label>
-                          <div className="relative">
-                            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                              <Mail className="h-5 w-5 text-marvel-grey" />
-                            </div>
-                            <input
-                              type="email"
-                              id="email"
-                              name="email"
-                              value={form.email}
-                              onChange={handleChange}
-                              required
-                              className="pl-10 w-full rounded-lg border border-marvel-grey/50 bg-marvel-navy/50 focus:ring-marvel-cyan focus:border-marvel-cyan p-3 text-white"
-                              placeholder="john@example.com"
-                            />
-                          </div>
-                        </div>
-                        
-                        <div>
-                          <label htmlFor="teamName" className="block text-sm font-medium text-marvel-cyan mb-1">
-                            Team Name *
-                          </label>
-                          <div className="relative">
-                            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                              <Users className="h-5 w-5 text-marvel-grey" />
-                            </div>
-                            <input
-                              type="text"
-                              id="teamName"
-                              name="teamName"
-                              value={form.teamName}
-                              onChange={handleChange}
-                              required
-                              className="pl-10 w-full rounded-lg border border-marvel-grey/50 bg-marvel-navy/50 focus:ring-marvel-cyan focus:border-marvel-cyan p-3 text-white"
-                              placeholder="Your team name"
-                            />
-                          </div>
-                        </div>
-                        
-                        <div>
-                          <label htmlFor="experience" className="block text-sm font-medium text-marvel-cyan mb-1">
-                            Preferred Theme *
-                          </label>
-                          <div className="relative">
-                            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                              <Code className="h-5 w-5 text-marvel-grey" />
-                            </div>
-                            <select
-                              id="experience"
-                              name="experience"
-                              value={form.experience}
-                              onChange={handleChange}
-                              required
-                              className="pl-10 w-full rounded-lg border border-marvel-grey/50 bg-marvel-navy/50 focus:ring-marvel-cyan focus:border-marvel-cyan p-3 text-white appearance-none"
-                            >
-                              <option value="">Select your preferred theme</option>
-                              <option value="AI">AI & Machine Learning</option>
-                              <option value="Cloud">Cloud Computing</option>
-                              <option value="IoT">IoT & Smart Automation</option>
-                              <option value="Security">Cybersecurity & Blockchain</option>
-                              <option value="Sustainability">Sustainable Tech & Green Solutions</option>
-                              <option value="AR/VR">AR/VR Development</option>
-                              <option value="HealthTech">HealthTech</option>
-                              <option value="Open">Open Innovation</option>
-                            </select>
-                          </div>
-                        </div>
-                        
-                        <div>
-                          <label htmlFor="specialRequests" className="block text-sm font-medium text-marvel-cyan mb-1">
-                            Special Requests or Accommodations (optional)
-                          </label>
-                          <textarea
-                            id="specialRequests"
-                            name="specialRequests"
-                            value={form.specialRequests}
-                            onChange={handleChange}
-                            rows={4}
-                            className="w-full rounded-lg border border-marvel-grey/50 bg-marvel-navy/50 focus:ring-marvel-cyan focus:border-marvel-cyan p-3 text-white"
-                            placeholder="Any dietary restrictions, accessibility needs, or other requirements"
-                          ></textarea>
-                        </div>
-                        
-                        <div className="mt-8">
-                          <button
-                            type="submit"
-                            className="w-full button-danger flex items-center justify-center"
-                            disabled={loading}
-                          >
-                            {loading ? (
-                              <div className="animate-spin h-5 w-5 border-2 border-white border-t-transparent rounded-full mr-2"></div>
-                            ) : (
-                              <Star className="h-5 w-5 mr-2" />
-                            )}
-                            {loading ? "Processing..." : "Submit Registration"}
-                          </button>
-                        </div>
-                      </div>
-                    </form>
-                  ) : (
-                    <div className="text-center py-12">
-                      <div className="w-16 h-16 bg-marvel-blue/20 text-marvel-cyan rounded-full mx-auto flex items-center justify-center mb-6 shadow-glow">
-                        <Check className="w-8 h-8" />
-                      </div>
-                      <h3 className="text-2xl font-semibold mb-4 font-orbitron">Registration Complete!</h3>
-                      <p className="text-gray-300 mb-8">
-                        Thank you for registering for our hackathon! We've sent a confirmation email with all the details.
-                      </p>
-                      <button
-                        type="button"
-                        onClick={() => {
-                          setSubmitted(false);
-                          setForm({
-                            name: '',
-                            email: '',
-                            teamName: '',
-                            experience: '',
-                            specialRequests: ''
-                          });
-                        }}
-                        className="button-outline"
-                      >
-                        Register Another Participant
-                      </button>
+                <div className="marvel-card p-8 border border-marvel-grey/30 text-center">
+                  <div className="py-12 flex flex-col items-center">
+                    <div className="w-20 h-20 bg-marvel-blue/20 text-marvel-cyan rounded-full mx-auto flex items-center justify-center mb-8 shadow-glow">
+                      <ExternalLink className="w-10 h-10" />
                     </div>
-                  )}
+                    
+                    <h3 className="text-2xl font-semibold mb-4 font-orbitron">Register on Unstop</h3>
+                    <p className="text-gray-300 mb-8 max-w-md mx-auto">
+                      Our hackathon registration is hosted on Unstop platform. Click the button below to navigate to our official registration page.
+                    </p>
+                    
+                    <a 
+                      href={registrationUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="button-danger flex items-center justify-center gap-2 px-8 py-3 text-lg"
+                    >
+                      <ExternalLink className="h-5 w-5" />
+                      Register on Unstop
+                    </a>
+                    
+                    <p className="text-gray-400 mt-6 text-sm">
+                      You'll be redirected to our official Unstop registration page where you can complete the registration process.
+                    </p>
+                  </div>
                 </div>
               </Transition>
             </div>

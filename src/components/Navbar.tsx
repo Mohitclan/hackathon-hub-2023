@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
-import { Home, Info, Shield, Medal, Users, Calendar, HelpCircle, FileText } from 'lucide-react';
+import { Home, Info, Shield, Medal, Users, Calendar, HelpCircle, FileText, ExternalLink } from 'lucide-react';
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -12,6 +12,9 @@ import {
 } from "@/components/ui/navigation-menu";
 
 const Navbar = () => {
+  // External registration URL - You'll replace this with your Unstop registration link
+  const registrationUrl = "https://unstop.com/your-hackathon-registration-link";
+  
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
@@ -24,11 +27,11 @@ const Navbar = () => {
         setIsScrolled(false);
       }
       
-      // Update active section based on scroll position
+      // Update active section based on scroll position - Fix TypeScript errors
       const sections = document.querySelectorAll('section[id]');
       sections.forEach(section => {
-        const sectionTop = section.offsetTop - 100;
-        const sectionHeight = section.offsetHeight;
+        const sectionTop = section.getBoundingClientRect().top + window.scrollY - 100;
+        const sectionHeight = section.getBoundingClientRect().height;
         const sectionId = section.getAttribute('id');
         
         if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
@@ -112,14 +115,16 @@ const Navbar = () => {
             </NavigationMenu>
           </div>
 
-          {/* Register Button - Desktop */}
+          {/* Register Button - Desktop - Updated to use external URL */}
           <div className="hidden md:block">
             <a
-              href="#register"
+              href={registrationUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="relative inline-flex items-center justify-center px-6 py-2 overflow-hidden font-medium text-white transition-all duration-300 ease-out bg-marvel-red rounded-md group"
             >
               <span className="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-marvel-red group-hover:translate-x-0 ease">
-                <FileText className="w-5 h-5" />
+                <ExternalLink className="w-5 h-5" />
               </span>
               <span className="absolute flex items-center justify-center w-full h-full text-white transition-all duration-300 transform group-hover:translate-x-full ease">Register Now</span>
               <span className="relative invisible">Register Now</span>
@@ -169,12 +174,15 @@ const Navbar = () => {
               {item.name}
             </a>
           ))}
+          {/* Mobile Register button - Updated to use external URL */}
           <a
-            href="#register"
+            href={registrationUrl}
+            target="_blank"
+            rel="noopener noreferrer" 
             className="mt-6 bg-marvel-red hover:bg-marvel-red/90 text-white font-medium py-4 rounded-md flex items-center justify-center gap-2 transition-colors"
             onClick={closeMobileMenu}
           >
-            <FileText className="w-5 h-5" />
+            <ExternalLink className="w-5 h-5" />
             Register Now
           </a>
         </div>
