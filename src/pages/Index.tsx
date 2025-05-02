@@ -183,13 +183,9 @@ const Index = () => {
       
       {/* Add HackQuanta Poster - Updated with new hackathon poster */}
       <div className="fixed left-5 bottom-10 z-10 w-24 h-32 md:w-36 md:h-48 shadow-xl rounded-lg overflow-hidden pointer-events-none">
-        <img 
-          src="/lovable-uploads/d24735e0-4a88-4688-86f2-77350476556c.png" 
-          alt="HackQuanta Poster" 
-          className="w-full h-full object-cover"
-        />
+        
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-        <div className="absolute bottom-2 left-0 w-full text-center text-xs font-bold text-white">HACKQUANTA</div>
+        <div className="absolute bottom-2 left-0 w-full text-center text-xs font-bold text-white"></div>
       </div>
     </div>
   );
