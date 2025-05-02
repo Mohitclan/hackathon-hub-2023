@@ -112,7 +112,7 @@ const Index = () => {
       {/* Avengers logo in the corner */}
       <div className="fixed top-0 left-0 w-24 h-24 pointer-events-none">
         <img 
-          src="/lovable-uploads/a34081ee-992f-41f8-ac2a-cb0f992bd76d.png" 
+          src="" 
           alt="Avengers Logo" 
           className="w-full h-full object-contain"
         />
