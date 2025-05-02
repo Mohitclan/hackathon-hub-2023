@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
@@ -125,7 +126,7 @@ const Index = () => {
         }}
       >
         <div className="w-32 h-32 md:w-40 md:h-40 relative">
-          {/* Use the new Captain America shield PNG */}
+          {/* Use the Captain America shield PNG */}
           <img 
             src="/lovable-uploads/61696365-a857-4321-9ced-000a7b25a3f2.png" 
             alt="Captain America Shield" 
@@ -143,17 +144,6 @@ const Index = () => {
         }}
       >
         <div className="iron-man-repulsor"></div>
-      </div>
-      
-      {/* Floating Spider */}
-      <div 
-        className="fixed top-1/3 right-10 z-10 pointer-events-none"
-        style={{ 
-          transform: `translateY(${scrollPosition * 0.2}px)`,
-          opacity: Math.min(1, Math.max(0, (scrollPosition - 300) / 500))
-        }}
-      >
-        <div className="spider-hanging"></div>
       </div>
       
       {/* Thor's Lightning Effects */}

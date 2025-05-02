@@ -76,12 +76,6 @@ const Prizes = () => {
       {/* Captain America Shield (floating in background) */}
       <div className="captain-america-shield"></div>
       
-      {/* Spider Web Top Right */}
-      <div className="spider-web spider-web-top-right"></div>
-      
-      {/* Spider Web Bottom Left */}
-      <div className="spider-web spider-web-bottom-left"></div>
-      
       <div className="container mx-auto px-6 relative">
         <Transition animation="fade-in-up">
           <h2 className="section-heading text-marvel-red">
