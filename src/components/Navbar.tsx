@@ -1,11 +1,20 @@
 
 import React, { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
-import { Menu, X, Shield, Home, Medal, Users, Calendar, HelpCircle, FileText } from 'lucide-react';
+import { Home, Info, Shield, Medal, Users, Calendar, HelpCircle, FileText } from 'lucide-react';
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,6 +23,18 @@ const Navbar = () => {
       } else {
         setIsScrolled(false);
       }
+      
+      // Update active section based on scroll position
+      const sections = document.querySelectorAll('section[id]');
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 100;
+        const sectionHeight = section.offsetHeight;
+        const sectionId = section.getAttribute('id');
+        
+        if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+          setActiveSection(sectionId || 'home');
+        }
+      });
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -30,7 +51,8 @@ const Navbar = () => {
 
   // Navigation items with icons
   const navItems = [
-    { name: 'About', icon: <Home className="w-5 h-5" />, href: '#about' },
+    { name: 'Home', icon: <Home className="w-5 h-5" />, href: '#home' },
+    { name: 'About', icon: <Info className="w-5 h-5" />, href: '#about' },
     { name: 'Sponsors', icon: <Shield className="w-5 h-5" />, href: '#sponsors' },
     { name: 'Prizes', icon: <Medal className="w-5 h-5" />, href: '#prizes' },
     { name: 'Mentors', icon: <Users className="w-5 h-5" />, href: '#mentors' },
@@ -40,102 +62,116 @@ const Navbar = () => {
 
   return (
     <>
-      {/* Vertical side navigation bar - desktop only */}
-      <div className="fixed left-0 top-0 h-full z-50 hidden md:block">
-        <div className={cn(
-          "h-full w-16 bg-black flex flex-col items-center py-12 transition-all duration-300",
-          isScrolled ? "shadow-md" : ""
-        )}>
-          {/* Logo */}
-          <a href="#" className="mb-12">
-            <Shield className="w-8 h-8 text-marvel-blue" />
-          </a>
-          
-          {/* Nav items */}
-          <div className="flex flex-col items-center space-y-8">
-            {navItems.map((item) => (
-              <a 
-                key={item.name}
-                href={item.href}
-                className="text-white/70 hover:text-marvel-blue transition-colors duration-300 group relative"
-                title={item.name}
-              >
-                {/* Icon */}
-                <div className="w-10 h-10 flex items-center justify-center">
-                  {item.icon}
-                </div>
-                
-                {/* Tooltip */}
-                <span className="absolute left-16 bg-black text-white px-2 py-1 rounded text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  {item.name}
-                </span>
-              </a>
-            ))}
-          </div>
-          
-          {/* Register button at bottom */}
-          <a 
-            href="#register" 
-            className="mt-auto bg-marvel-blue hover:bg-marvel-blue/90 text-white p-2 rounded-full transition-transform hover:scale-110"
-            title="Register Now"
-          >
-            <FileText className="w-6 h-6" />
-          </a>
-        </div>
-      </div>
-
-      {/* Mobile header */}
+      {/* Main Navigation - Desktop */}
       <header
         className={cn(
-          'fixed top-0 left-0 w-full z-50 transition-all duration-500 md:hidden',
+          'fixed top-0 left-0 w-full z-50 transition-all duration-500',
           isScrolled
-            ? 'py-3 bg-black shadow-md'
-            : 'py-5 bg-transparent'
+            ? 'py-2 bg-black/80 backdrop-blur-md border-b border-marvel-blue/20 shadow-lg'
+            : 'py-4 bg-transparent'
         )}
       >
         <div className="container mx-auto px-6 flex items-center justify-between">
-          <a href="#" className="text-2xl font-bold flex items-center space-x-2">
+          {/* Logo */}
+          <a href="#" className="text-xl font-bold flex items-center gap-2">
             <Shield className="w-6 h-6 text-marvel-blue animate-pulse-slow" />
-            <span className="font-orbitron gradient-text">HackQuanta</span>
+            <span className="font-marvel gradient-text">HackQuanta</span>
           </a>
+
+          {/* Desktop Navigation */}
+          <div className="hidden md:block">
+            <NavigationMenu>
+              <NavigationMenuList className="gap-1">
+                {navItems.map((item) => (
+                  <NavigationMenuItem key={item.name}>
+                    <a 
+                      href={item.href} 
+                      className={cn(
+                        "group flex items-center px-3 py-2 text-sm font-medium rounded-md transition-all duration-300",
+                        activeSection === item.href.replace('#', '') 
+                          ? "bg-marvel-blue/10 text-marvel-blue" 
+                          : "text-white hover:text-marvel-blue hover:bg-marvel-blue/5"
+                      )}
+                    >
+                      <span className="flex items-center gap-2">
+                        {item.icon}
+                        {item.name}
+                      </span>
+                      <span 
+                        className={cn(
+                          "block h-0.5 bg-marvel-blue mt-0.5 transition-all duration-300",
+                          activeSection === item.href.replace('#', '')
+                            ? "w-full" 
+                            : "w-0 group-hover:w-full"
+                        )}
+                      ></span>
+                    </a>
+                  </NavigationMenuItem>
+                ))}
+              </NavigationMenuList>
+            </NavigationMenu>
+          </div>
+
+          {/* Register Button - Desktop */}
+          <div className="hidden md:block">
+            <a
+              href="#register"
+              className="relative inline-flex items-center justify-center px-6 py-2 overflow-hidden font-medium text-white transition-all duration-300 ease-out bg-marvel-red rounded-md group"
+            >
+              <span className="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-marvel-red group-hover:translate-x-0 ease">
+                <FileText className="w-5 h-5" />
+              </span>
+              <span className="absolute flex items-center justify-center w-full h-full text-white transition-all duration-300 transform group-hover:translate-x-full ease">Register Now</span>
+              <span className="relative invisible">Register Now</span>
+            </a>
+          </div>
 
           {/* Mobile Menu Button */}
           <button
-            className="text-white focus:outline-none"
+            className="md:hidden text-white focus:outline-none relative w-10 h-10"
             onClick={toggleMobileMenu}
             aria-label="Toggle mobile menu"
           >
-            {isMobileMenuOpen ? (
-              <X className="w-6 h-6 text-marvel-cyan" />
-            ) : (
-              <Menu className="w-6 h-6" />
-            )}
+            <div className={cn(
+              "absolute w-6 h-0.5 bg-white transition-all duration-300 transform",
+              isMobileMenuOpen ? "top-5 rotate-45" : "top-4"
+            )}></div>
+            <div className={cn(
+              "absolute w-6 h-0.5 bg-white transition-all duration-300",
+              isMobileMenuOpen ? "opacity-0" : "top-5"
+            )}></div>
+            <div className={cn(
+              "absolute w-6 h-0.5 bg-white transition-all duration-300 transform",
+              isMobileMenuOpen ? "top-5 -rotate-45" : "top-6"
+            )}></div>
           </button>
         </div>
       </header>
 
-      {/* Mobile Navigation */}
+      {/* Mobile Navigation Overlay */}
       <div
         className={cn(
-          'fixed inset-0 bg-black/95 backdrop-blur-lg z-40 transition-transform duration-500 ease-in-out transform md:hidden',
+          'fixed inset-0 bg-black/95 backdrop-blur-xl z-40 transition-transform duration-500 ease-in-out transform md:hidden',
           isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
         )}
       >
-        <div className="flex flex-col h-full pt-20 px-6 space-y-8">
+        <div className="flex flex-col h-full pt-20 px-6 space-y-4">
           {navItems.map((item) => (
             <a
               key={item.name}
               href={item.href}
-              className="font-medium text-xl text-white hover:text-marvel-cyan py-2 border-b border-marvel-grey/30 flex items-center gap-3"
+              className="flex items-center gap-3 py-3 text-lg font-medium text-white hover:text-marvel-blue transition-colors duration-200 border-b border-marvel-blue/20"
               onClick={closeMobileMenu}
             >
-              {item.icon}
+              <div className="bg-marvel-blue/10 p-2 rounded-full">
+                {item.icon}
+              </div>
               {item.name}
             </a>
           ))}
           <a
             href="#register"
-            className="button-danger text-center mt-8 flex items-center justify-center gap-2"
+            className="mt-6 bg-marvel-red hover:bg-marvel-red/90 text-white font-medium py-4 rounded-md flex items-center justify-center gap-2 transition-colors"
             onClick={closeMobileMenu}
           >
             <FileText className="w-5 h-5" />
