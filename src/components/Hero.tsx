@@ -182,7 +182,7 @@ const Hero = () => {
                 
                 {/* Event tag */}
                 <div className="absolute -bottom-5 -right-5 bg-marvel-red text-white py-2 px-4 rounded font-marvel shadow-md">
-                  JIMSEMTC
+                  SEPT 5-6, 2025
                 </div>
               </div>
             </Transition>
@@ -205,3 +205,4 @@ const Hero = () => {
 };
 
 export default Hero;
+
